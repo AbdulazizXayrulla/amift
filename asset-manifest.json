@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/amift/static/css/main.5f361e03.chunk.css",
+    "main.js": "/amift/static/js/main.c87badb6.chunk.js",
+    "main.js.map": "/amift/static/js/main.c87badb6.chunk.js.map",
+    "runtime-main.js": "/amift/static/js/runtime-main.2e6d27af.js",
+    "runtime-main.js.map": "/amift/static/js/runtime-main.2e6d27af.js.map",
+    "static/js/2.07db086f.chunk.js": "/amift/static/js/2.07db086f.chunk.js",
+    "static/js/2.07db086f.chunk.js.map": "/amift/static/js/2.07db086f.chunk.js.map",
+    "index.html": "/amift/index.html",
+    "precache-manifest.479a87847d1ab063e21d69028a3374fd.js": "/amift/precache-manifest.479a87847d1ab063e21d69028a3374fd.js",
+    "service-worker.js": "/amift/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/amift/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.07db086f.chunk.js.LICENSE.txt": "/amift/static/js/2.07db086f.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/amift/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e6d27af.js",
+    "static/js/2.07db086f.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.c87badb6.chunk.js"
+  ]
+}
