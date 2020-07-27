@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b7bb51ee0defd3ec3e18f13024f6dd9",
+    "revision": "8d1cbe623e4fb6e4782cad78fa726168",
     "url": "/amift/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/amift/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "2430251a7e74b2a2f05d",
+    "revision": "b39f147887414c36f561",
     "url": "/amift/static/css/main.073e3dd5.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/amift/static/js/2.04e25080.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2430251a7e74b2a2f05d",
-    "url": "/amift/static/js/main.8dcbdad8.chunk.js"
+    "revision": "b39f147887414c36f561",
+    "url": "/amift/static/js/main.f7d2194a.chunk.js"
   },
   {
     "revision": "90999ada6bf1983cb530",
