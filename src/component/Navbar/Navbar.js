@@ -8,7 +8,7 @@ const Navbar = () => {
         <div >
             <ul >
                 <li>
-                    <NavLink to="/#"><img src="http://xayrullayev.lark.ru/images/IMG_20200726_0932521.jpg?1595852837" className={s.image} alt="aa"/></NavLink>
+                    <NavLink to="/#"><img src="https://github.com/XayrullayevAbdulaziz/amift/blob/master/public/image/icon.png" className={s.image} alt="aa"/></NavLink>
                 </li>
 
                 <li><NavLink to="/yangiliklar">Yangiliklar</NavLink></li>
