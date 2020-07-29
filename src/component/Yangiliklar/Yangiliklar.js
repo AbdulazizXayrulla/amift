@@ -1,11 +1,18 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
 
-const Yangiliklar =()=>{
+const Yangiliklar =(props)=>{
+
     return (
         <div className={s.Yangiliklar}>
 
-            blabla
+            {props.yangiliklar.map(sa=>
+            <div>{sa.id}
+                <br/>
+                {sa.matni}
+            </div>
+
+        )}
 
         </div>
     );
