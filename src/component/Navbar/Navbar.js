@@ -16,6 +16,9 @@ const Navbar = () => {
                 <li><NavLink to="/Kutubxona">Kutubxona</NavLink></li>
                 <li><NavLink to="/OnlainDarslar">OnlainDarslar</NavLink></li>
                 <li><NavLink to="/IshJoylari">IshJoylari</NavLink></li>
+                <li><NavLink to="/dialogs">dialogs</NavLink></li>
+                <li><NavLink to="/profile">profile</NavLink></li>
+
                 <li className='ml-auto'><NavLink to="/Users" >Users
                     <img className={s.iconLogin}
                     src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAdVBMVEX//
