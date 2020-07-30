@@ -16,7 +16,7 @@ import Dialogs from "./component/Dialogs/Dialogs";
 import Profile from "./component/Profile/Profile";
 
 function App(props) {
-    debugger;
+
     return <BrowserRouter>
         <div className='container'>
             <Navbar/>
