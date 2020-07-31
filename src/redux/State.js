@@ -67,7 +67,18 @@ let state={
             {id: 5, message: 'Yo'}
         ]
     },
-    sidebar: {}
+
 
 }
+ export let addMessage=(messeges)=>{
+    debugger;
+let messege={
+    id:5,
+    message:messeges,
+    likesCount:0
+};
+
+state.profilePage.posts.push(messege);
+ }
+
 export default state;

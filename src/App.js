@@ -28,7 +28,9 @@ function App(props) {
             <Route path='/dialogs'
                    render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
             <Route path='/profile'
-                   render={ () => <Profile state={props.state.profilePage} /> }/>
+                   render={ () => <Profile state={props.state.profilePage}
+                                           addMessage={props.addMessage}
+                   /> }/>
 
             <Route path='/Users' component={Users}/>
 

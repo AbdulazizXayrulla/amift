@@ -9,7 +9,9 @@ const MyPosts = (props) => {
 let newAddPost=React.createRef();
 console.log(newAddPost)
 let newPost=()=>{
-    window.alert(newAddPost.current.value);
+    debugger;
+    props.addMessage(newAddPost.current.value)
+
 }
     return (
         <div className={s.postsBlock}>
