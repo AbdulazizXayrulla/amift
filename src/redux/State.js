@@ -12,11 +12,8 @@ let state={
 
     ],
     yangiliklar:[
-        {id: 1, matni: ' Олий ўқув юртлари талабалари учун мўлжалланган ушбу Ўзбекистон'},
-        {id: 2, matni: 'hhahhahah'},
-        {id: 3, matni: 'fgfgfgfgfgf'},
-        {id: 4, matni: 'trtrtrtrt'},
-        {id: 5, matni: 'sdsdsdsdsdsd'},
+        {id: 1, Head: 'Assalomu alaykum ',body:'This is body',footer:'This is footer'},
+
 
 
     ],
@@ -76,7 +73,7 @@ let state={
 
 
 export let addMessage=(messeges)=>{
-    debugger;
+
 let messege={
     id:5,
     message:messeges,
@@ -86,5 +83,16 @@ let messege={
 state.profilePage.posts.push(messege);
      rerenderEntireTree(state)
  }
+ export let AddNew=(props)=>{
+    let New ={
+        id:2,
+        Head:props.Head,
+        body:props.body,
+        footer:props.footer
 
+    }
+    state.yangiliklar.push(New)
+     rerenderEntireTree(state)
+ }
+console.log(state)
 export default state;

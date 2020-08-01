@@ -16,11 +16,11 @@ import Dialogs from "./component/Dialogs/Dialogs";
 import Profile from "./component/Profile/Profile";
 
 function App(props) {
-
+    console.log(props.AddNew)
     return <BrowserRouter>
         <div className='container'>
             <Navbar/>
-            <Route path='/yangiliklar' render={()=><Yangiliklar yangiliklar={props.state.yangiliklar}/>}/>
+            <Route path='/yangiliklar' render={()=><Yangiliklar yangiliklar={props.state.yangiliklar} AddNew={props.AddNew}/>}/>
             <Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi UstozlarJamoasi={props.state.UstozlarJamoasi}/>}/>
             <Route path='/Kutubxona' render={()=><Kutubxona Kutubxona={props.state.Kutubxona}/>}/>
             <Route path='/OnlainDarslar' render={()=><OnlainDarslar OnlainDarslar={props.state.OnlainDarslar}/>}/>
@@ -39,5 +39,6 @@ function App(props) {
 
         ;
 }
+
 
 export default App;
