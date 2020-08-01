@@ -1,3 +1,6 @@
+import {rerenderEntireTree} from "../render";
+
+
 let state={
     Kutubxona:[
         {id: 1, kitobNomi: 'ertak'},
@@ -70,7 +73,9 @@ let state={
 
 
 }
- export let addMessage=(messeges)=>{
+
+
+export let addMessage=(messeges)=>{
     debugger;
 let messege={
     id:5,
@@ -79,6 +84,7 @@ let messege={
 };
 
 state.profilePage.posts.push(messege);
+     rerenderEntireTree(state)
  }
 
 export default state;

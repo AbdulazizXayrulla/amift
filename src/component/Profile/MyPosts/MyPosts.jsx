@@ -11,6 +11,7 @@ console.log(newAddPost)
 let newPost=()=>{
     debugger;
     props.addMessage(newAddPost.current.value)
+    newAddPost.current.value='';
 
 }
     return (
