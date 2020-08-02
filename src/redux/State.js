@@ -1,4 +1,6 @@
-import {rerenderEntireTree} from "../render";
+let rerenderEntireTree=()=>{
+
+}
 
 
 let state={
@@ -100,5 +102,8 @@ state.profilePage.posts.push(messege);
     rerenderEntireTree(state)
  }
 
-console.log(state)
+export const subscribe=(observer)=>{
+    rerenderEntireTree=observer;
+
+}
 export default state;
