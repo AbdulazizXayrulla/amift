@@ -51,6 +51,7 @@ let state={
             {id: 3, message: 'Blabla', likesCount: 11},
             {id: 4, message: 'Dada', likesCount: 11}
         ]
+        ,newPostText:'Abdulaziz'
     },
     dialogsPage: {
         dialogs: [
@@ -72,14 +73,14 @@ let state={
 }
 
 
-export let addMessage=(messeges)=>{
+export let addMessage=()=>{
 
 let messege={
     id:5,
-    message:messeges,
+    message:state.profilePage.newPostText,
     likesCount:0
 };
-
+state.profilePage.newPostText=''
 state.profilePage.posts.push(messege);
      rerenderEntireTree(state)
  }
@@ -94,5 +95,10 @@ state.profilePage.posts.push(messege);
     state.yangiliklar.push(New)
      rerenderEntireTree(state)
  }
+ export let editText=(props)=>{
+    state.profilePage.newPostText=props;
+    rerenderEntireTree(state)
+ }
+
 console.log(state)
 export default state;

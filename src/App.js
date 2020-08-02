@@ -30,6 +30,8 @@ function App(props) {
             <Route path='/profile'
                    render={ () => <Profile state={props.state.profilePage}
                                            addMessage={props.addMessage}
+                                           editText={props.editText}
+
                    /> }/>
 
             <Route path='/Users' component={Users}/>

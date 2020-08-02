@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 
 
-import {addMessage, AddNew} from "./redux/State";
+import {addMessage, AddNew, editText} from "./redux/State";
 
 
 
@@ -14,6 +14,7 @@ export let rerenderEntireTree=(props)=>{
             <App  state={props}
                   addMessage={addMessage}
                   AddNew={AddNew}
+                  editText={editText}
             />
         </React.StrictMode>,
         document.getElementById('root')
