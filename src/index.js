@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import Dialogs from "./component/Dialogs/Dialogs";
-import state, {AddNew, editText, subscribe} from "./redux/State";
-import {addMessage} from "./redux/State";
+
+import store from "./redux/State";
 
 
 
@@ -13,16 +13,16 @@ import {addMessage} from "./redux/State";
     ReactDOM.render(
         <React.StrictMode>
             <App  state={props}
-                  addMessage={addMessage}
-                  AddNew={AddNew}
-                  editText={editText}
+                  addMessage={store.addMessage.bind(store)}
+                  AddNew={store.AddNew.bind(store)}
+                  editText={store.editText}
             />
         </React.StrictMode>,
         document.getElementById('root')
     );
 }
-rerenderEntireTree(state);
- subscribe(rerenderEntireTree);
+rerenderEntireTree(store.getState());
+ store.subscribe(rerenderEntireTree);
 
 
 
