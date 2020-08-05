@@ -13,9 +13,10 @@ import store from "./redux/State";
     ReactDOM.render(
         <React.StrictMode>
             <App  state={props}
-                  addMessage={store.addMessage.bind(store)}
-                  AddNew={store.AddNew.bind(store)}
-                  editText={store.editText}
+                  dispatch={store.dispatch.bind(store)}
+                  // addMessage={store.addMessage.bind(store)}
+                  // AddNew={store.AddNew.bind(store)}
+                  // editText={store.editText}
             />
         </React.StrictMode>,
         document.getElementById('root')

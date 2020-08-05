@@ -18,11 +18,11 @@ import Profile from "./component/Profile/Profile";
 
 
 function App(props) {
-    console.log(props.AddNew)
+
     return <BrowserRouter>
         <div className='container'>
             <Navbar/>
-            <Route path='/yangiliklar' render={()=><Yangiliklar yangiliklar={props.state.yangiliklar} AddNew={props.AddNew}/>}/>
+            <Route path='/yangiliklar' render={()=><Yangiliklar yangiliklar={props.state.yangiliklar} dispatch={props.dispatch}/>}/>
             <Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi UstozlarJamoasi={props.state.UstozlarJamoasi}/>}/>
             <Route path='/Kutubxona' render={()=><Kutubxona Kutubxona={props.state.Kutubxona}/>}/>
             <Route path='/OnlainDarslar' render={()=><OnlainDarslar OnlainDarslar={props.state.OnlainDarslar}/>}/>
@@ -31,8 +31,8 @@ function App(props) {
                    render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
             <Route path='/profile'
                    render={ () => <Profile state={props.state.profilePage}
-                                           addMessage={props.addMessage}
-                                           editText={props.editText}
+                                           dispatch={props.dispatch}
+
 
                    /> }/>
 

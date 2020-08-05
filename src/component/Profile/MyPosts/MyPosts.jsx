@@ -1,6 +1,7 @@
 import React from 'react';
 import s from './MyPosts.module.css';
 import Post from './Post/Post';
+import {addMessageActionCreator, editTextActionCreator} from "../../../redux/State";
 
 const MyPosts = (props) => {
 
@@ -9,15 +10,16 @@ const MyPosts = (props) => {
     let newAddPost = React.createRef();
     console.log(newAddPost)
     let newPost = () => {
+props.dispatch(addMessageActionCreator())
 
-        props.addMessage()
 
 
     }
     const onChangeClick=()=>{
         let text=newAddPost.current.value;
-        props.editText(text);
-        console.log(text)
+        props.dispatch(editTextActionCreator(text)
+        );
+
 
     }
     return (

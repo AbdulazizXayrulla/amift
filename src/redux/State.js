@@ -1,5 +1,12 @@
+const ADD_MESSAGE='ADD-MESSAGE'
+const EDIT_TEXT='EDIT-TEXT'
+const ADD_NEW='ADD-NEW'
+const ON_CHANGE_INPUT_1='ON-CHANGE-INPUT-1'
+const ON_CHANGE_INPUT_2='ON-CHANGE-INPUT-2'
+const ON_CHANGE_INPUT_3='ON-CHANGE-INPUT-3'
 
-let store= {
+
+let store = {
     _state: {
         Kutubxona: [
             {id: 1, kitobNomi: 'ertak'},
@@ -11,7 +18,7 @@ let store= {
 
         ],
         yangiliklar: [
-            {id: 1, Head: 'Assalomu alaykum ', body: 'This is body', footer: 'This is footer'},
+            {id: 0, Head: 'Assalomu alaykum ', Body: 'This is body', Footer: 'This is footer'},
 
 
         ],
@@ -71,46 +78,99 @@ let store= {
     },
     _callSubScribe() {
     },
-    getState(){
+    subscribe(observer) {
+        this._callSubScribe = observer;
+
+    },
+    getState() {
         return this._state
 
     },
-     addMessage(){
 
-        let messege={
-            id:5,
-            message:this._state.profilePage.newPostText,
-            likesCount:0
-        };
-         {debugger}
-         this._state.profilePage.newPostText=''
-         this._state.profilePage.posts.push(messege);
-         this._callSubScribe(this.getState())
-    },
-    AddNew(props){
-        let New ={
-            id:2,
-            Head:props.Head,
-            body:props.body,
-            footer:props.footer
 
+    dispatch(action) {
+        if (action.type === ADD_MESSAGE) {
+            let messege = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likesCount: 0
+            };
+            {
+                debugger
+            }
+            this._state.profilePage.newPostText = ''
+            this._state.profilePage.posts.push(messege);
+            this._callSubScribe(this.getState())
         }
-        this._state.yangiliklar.push(New)
-        this._callSubScribe(this.getState())
+        if (action.type === ADD_NEW) {
+            let New = {
+                id: action.id,
+                Head: action.Head,
+                Body: action.Body,
+                Footer: action.Footer
+
+            }
+            this._state.yangiliklar.push(New)
+            this._callSubScribe(this.getState())
+        }
+        if (action.type === ON_CHANGE_INPUT_1) {
+            this._state.yangiliklar[action.id].Head = action.text
+            this._callSubScribe(this.getState())
+        }
+        if (action.type === ON_CHANGE_INPUT_2) {
+            this._state.yangiliklar[action.id].Body = action.text
+            this._callSubScribe(this.getState())
+        }
+        if (action.type === ON_CHANGE_INPUT_3) {
+            this._state.yangiliklar[action.id].Footer = action.text
+            this._callSubScribe(this.getState())
+        }
+        if (action.type === EDIT_TEXT) {
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubScribe(this.getState())
+        }
     },
-    editText(props){
-        this._state.profilePage.newPostText=props;
-        this._callSubScribe(this.getState())
-    },
-   subscribe(observer){
-        this._callSubScribe=observer;
-
-    }
-
-
 
 
 }
+export const addMessageActionCreator = () => ({
+    type: ADD_MESSAGE,
+
+})
+export const editTextActionCreator = (text) => ({
+    type: EDIT_TEXT,
+    newText: text
+})
+export const addnewActionCreator = (length,cardHeader,cardBody,cardFooter) => ({
+    type: ADD_NEW,
+    id: length,
+    Head: cardHeader,
+    Body: cardBody,
+    Footer: cardFooter
+
+
+})
+export const onChangeInput1ActionCreator = (lingth,cardHeader) => ({
+    type:ON_CHANGE_INPUT_1,
+    id:lingth,
+    text:cardHeader
+
+
+})
+export const onChangeInput2ActionCreator = (lingth,cardBody) => ({
+    type:ON_CHANGE_INPUT_2,
+    id:lingth,
+    text:cardBody
+
+
+})
+export const onChangeInput3ActionCreator = (lingth,cardFooter) => ({
+    type:ON_CHANGE_INPUT_3,
+    id:lingth,
+    text:cardFooter
+
+
+})
 
 
 export default store;
