@@ -1,24 +1,21 @@
-const ADD_MESSAGE='ADD-MESSAGE'
-const EDIT_TEXT='EDIT-TEXT'
-const ADD_NEW='ADD-NEW'
-const ON_CHANGE_INPUT_1='ON-CHANGE-INPUT-1'
-const ON_CHANGE_INPUT_2='ON-CHANGE-INPUT-2'
-const ON_CHANGE_INPUT_3='ON-CHANGE-INPUT-3'
+import profileReducer from "./profile-reducer";
+import yangiliklarReducer from "./yangiliklar-reducer";
+import diologsReducer from "./diologs-reducer";
 
 
 let store = {
     _state: {
+        yangiliklar: [
+            {id: 0, Head: 'Assalomu alaykum ', Body: 'This is body', Footer: 'This is footer'},
+
+
+        ],
         Kutubxona: [
             {id: 1, kitobNomi: 'ertak'},
             {id: 2, kitobNomi: 'lirika'},
             {id: 3, kitobNomi: 'Adabiyot'},
             {id: 4, kitobNomi: 'komediya'},
             {id: 5, kitobNomi: 'Sherlar'},
-
-
-        ],
-        yangiliklar: [
-            {id: 0, Head: 'Assalomu alaykum ', Body: 'This is body', Footer: 'This is footer'},
 
 
         ],
@@ -71,7 +68,8 @@ let store = {
                 {id: 3, message: 'Yo'},
                 {id: 4, message: 'Yo'},
                 {id: 5, message: 'Yo'}
-            ]
+            ],
+            newMessage: '',
         },
 
 
@@ -89,88 +87,18 @@ let store = {
 
 
     dispatch(action) {
-        if (action.type === ADD_MESSAGE) {
-            let messege = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likesCount: 0
-            };
-            {
-                debugger
-            }
-            this._state.profilePage.newPostText = ''
-            this._state.profilePage.posts.push(messege);
-            this._callSubScribe(this.getState())
-        }
-        if (action.type === ADD_NEW) {
-            let New = {
-                id: action.id,
-                Head: action.Head,
-                Body: action.Body,
-                Footer: action.Footer
+        this._state.profilePage = profileReducer(this._state.profilePage, action)
+        this._state.dialogsPage = diologsReducer(this._state.dialogsPage, action)
+        this._state.yangiliklar = yangiliklarReducer(this._state.yangiliklar, action)
 
-            }
-            this._state.yangiliklar.push(New)
-            this._callSubScribe(this.getState())
-        }
-        if (action.type === ON_CHANGE_INPUT_1) {
-            this._state.yangiliklar[action.id].Head = action.text
-            this._callSubScribe(this.getState())
-        }
-        if (action.type === ON_CHANGE_INPUT_2) {
-            this._state.yangiliklar[action.id].Body = action.text
-            this._callSubScribe(this.getState())
-        }
-        if (action.type === ON_CHANGE_INPUT_3) {
-            this._state.yangiliklar[action.id].Footer = action.text
-            this._callSubScribe(this.getState())
-        }
-        if (action.type === EDIT_TEXT) {
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubScribe(this.getState())
-        }
+        this._callSubScribe(this.getState())
     },
 
 
 }
-export const addMessageActionCreator = () => ({
-    type: ADD_MESSAGE,
-
-})
-export const editTextActionCreator = (text) => ({
-    type: EDIT_TEXT,
-    newText: text
-})
-export const addnewActionCreator = (length,cardHeader,cardBody,cardFooter) => ({
-    type: ADD_NEW,
-    id: length,
-    Head: cardHeader,
-    Body: cardBody,
-    Footer: cardFooter
 
 
-})
-export const onChangeInput1ActionCreator = (lingth,cardHeader) => ({
-    type:ON_CHANGE_INPUT_1,
-    id:lingth,
-    text:cardHeader
 
-
-})
-export const onChangeInput2ActionCreator = (lingth,cardBody) => ({
-    type:ON_CHANGE_INPUT_2,
-    id:lingth,
-    text:cardBody
-
-
-})
-export const onChangeInput3ActionCreator = (lingth,cardFooter) => ({
-    type:ON_CHANGE_INPUT_3,
-    id:lingth,
-    text:cardFooter
-
-
-})
 
 
 export default store;

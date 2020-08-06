@@ -28,7 +28,8 @@ function App(props) {
             <Route path='/OnlainDarslar' render={()=><OnlainDarslar OnlainDarslar={props.state.OnlainDarslar}/>}/>
             <Route path='/IshJoylari' render={()=><IshJoylari IshJoylari={props.state.IshJoylari}/>}/>
             <Route path='/dialogs'
-                   render={ () => <Dialogs state={props.state.dialogsPage} /> }/>
+                   render={ () => <Dialogs state={props.state.dialogsPage}
+                                           dispatch={props.dispatch}/> }/>
             <Route path='/profile'
                    render={ () => <Profile state={props.state.profilePage}
                                            dispatch={props.dispatch}

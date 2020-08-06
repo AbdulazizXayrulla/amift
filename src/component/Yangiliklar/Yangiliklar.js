@@ -5,7 +5,7 @@ import {
     onChangeInput1ActionCreator,
     onChangeInput2ActionCreator,
     onChangeInput3ActionCreator
-} from "../../redux/State";
+} from "../../redux/yangiliklar-reducer";
 
 
 const Yangiliklar = (props) => {
