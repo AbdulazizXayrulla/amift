@@ -31,7 +31,6 @@ const Yangiliklar = (props) => {
 
     let onChangeInput1 = () => {
         props.dispatch(onChangeInput1ActionCreator(props.yangiliklar.length - 1, cardHeader.current.value))
-
     }
     let onChangeInput2 = () => {
         props.dispatch(onChangeInput2ActionCreator(props.yangiliklar.length - 1, cardBody.current.value))
@@ -39,7 +38,10 @@ const Yangiliklar = (props) => {
     let onChangeInput3 = () => {
         props.dispatch(onChangeInput3ActionCreator(props.yangiliklar.length-1,cardFooter.current.value))
     }
-    let newInfo = props.yangiliklar.map((t, number) => <div className='col-md-4'>
+
+
+    let newInfo = props.yangiliklar.map(t => <div className='col-md-4'>
+
         <div className="card">
             <div className="card-header">{t.Head}</div>
             <div className="card-body">{t.Body}</div>

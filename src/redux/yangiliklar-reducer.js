@@ -3,8 +3,14 @@ const ON_CHANGE_INPUT_1='ON-CHANGE-INPUT-1'
 const ON_CHANGE_INPUT_2='ON-CHANGE-INPUT-2'
 const ON_CHANGE_INPUT_3='ON-CHANGE-INPUT-3'
 
+let initialState= [{
 
-const yangiliklarReducer=(state,action)=>{
+id: 0, Head: 'Assalomu alaykum ', Body: 'This is body', Footer: 'This is footer'
+
+
+}]
+
+const yangiliklarReducer=(state=initialState,action)=>{
     if (action.type === ADD_NEW) {
         let New = {
             id: action.id,
