@@ -1,11 +1,6 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
-import {
-    addnewActionCreator,
-    onChangeInput1ActionCreator,
-    onChangeInput2ActionCreator,
-    onChangeInput3ActionCreator
-} from "../../redux/yangiliklar-reducer";
+import yangiliklarReducer from "../../redux/yangiliklar-reducer";
 
 
 const Yangiliklar = (props) => {
@@ -24,38 +19,47 @@ const Yangiliklar = (props) => {
     const addNew = () => {
 
         observation.current.className = 'd-none'
-        props.dispatch(addnewActionCreator(props.yangiliklar.length, cardHeader.current.value, cardBody.current.value, cardFooter.current.value))
+        props.addNew(cardHeader.current.value, cardBody.current.value, cardFooter.current.value)
 
 
     }
 
     let onChangeInput1 = () => {
-        props.dispatch(onChangeInput1ActionCreator(props.yangiliklar.length - 1, cardHeader.current.value))
+        props.onChangeInput1(cardHeader.current.value)
     }
     let onChangeInput2 = () => {
-        props.dispatch(onChangeInput2ActionCreator(props.yangiliklar.length - 1, cardBody.current.value))
+        props.onChangeInput2(cardBody.current.value)
     }
     let onChangeInput3 = () => {
-        props.dispatch(onChangeInput3ActionCreator(props.yangiliklar.length-1,cardFooter.current.value))
+        props.onChangeInput3(cardFooter.current.value)
     }
 
 
-    let newInfo = props.yangiliklar.map(t => <div className='col-md-4'>
+    let newInfo = props.yangiliklar.map((t) => <div className='col-md-4'>
 
-        <div className="card">
-            <div className="card-header">{t.Head}</div>
-            <div className="card-body">{t.Body}</div>
-            <div className="card-footer">{t.Footer}</div>
+            <div className="card">
+                <div className="card-header">{t.Head}</div>
+                <div className="card-body">{t.Body}</div>
+                <div className="card-footer">{t.Footer}</div>
+            </div>
+
         </div>
+    )
 
-    </div>)
+let deleteEnd=()=>{
 
-
+   console.log( newInfo[newInfo.length-1].props.className)
+}
+deleteEnd()
+console.log(newInfo)
     return (
         <div className={s.Yangiliklar}>
             <div className="col-md-8">
                 <div className="container d-flex">
-                    {newInfo}
+
+                    {
+                                   newInfo
+                    }
                 </div>
             </div>
 
