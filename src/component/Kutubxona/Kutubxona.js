@@ -1,16 +1,28 @@
 import React from "react";
 import s from './Kutubxona.module.css'
+import StoreContext from "../../StoreContext";
 
 const Kutubxona =(props)=>{
     return (
         <div className={s.Kutubxona}>
-            {props.Kutubxona.map(sa=>
-                <div>{sa.id}
-                  <span className='bg-info'>{sa.kitobNomi}</span>
+            <StoreContext.Consumer>{
+                (store)=>{
 
-                </div>
+                    let Kutubxona=store.getState().Kutubxona.map(sa=>
+                        <div>{sa.id}
+                            <span className='bg-info'>{sa.kitobNomi}</span>
 
-            )}
+                        </div>
+
+                    )
+
+                    return Kutubxona
+                }
+            }
+
+            </StoreContext.Consumer>
+
+
 
 
         </div>

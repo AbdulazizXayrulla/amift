@@ -1,22 +1,33 @@
 import React from 'react';
-import s from './MyPosts.module.css';
-
 import {addMessageActionCreator, editTextActionCreator} from "../../../redux/profile-reducer";
 import MyPosts from "./MyPosts";
-
-const MyPostsContainer = (props) => {
-    let newPost = () => {
-        props.dispatch(addMessageActionCreator())
-    }
-    const onChangeClick = (props1) => {
-
-        props.dispatch(editTextActionCreator(props1)
-        );
+import StoreContext from "../../../StoreContext";
 
 
-    }
+const MyPostsContainer = () => {
+
     return (
-        <MyPosts newPost={newPost} onChangeClick={onChangeClick} newPostText={props.newPostText} posts={props.posts}/>
+        <StoreContext.Consumer>{
+            (store)=>{
+                let newPost = () => {
+                    store.dispatch(addMessageActionCreator())
+                }
+                const onChangeClick = (props1) => {
+
+                    store.dispatch(editTextActionCreator(props1)
+                    );
+
+
+                }
+                {debugger}
+          return <MyPosts newPost={newPost} onChangeClick={onChangeClick} newPostText={store.getState().profilePage.newPostText}
+                           posts={store.getState().profilePage.posts}/>
+
+            }
+
+        }
+
+        </StoreContext.Consumer>
     )
 }
 
