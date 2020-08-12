@@ -2,15 +2,11 @@
     width: 55px;
     height: 55px;
 }
-ul {
-    display: flex;
-    align-items: center;
-}
-ul li{
-    display: inline;
-    padding: 10px;
-}
 .iconLogin{
     width: 15px;
     height: 15px;
 }
+
+
+
+

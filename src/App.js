@@ -18,7 +18,7 @@ import SignUp from "./component/SignUp/SignUp";
 function App(props) {
 
     return <BrowserRouter>
-        <div className='container'>
+        <div className='container-fluid'>
             <Navbar/>
             <Route path='/yangiliklar' render={()=><YangiliklarContainer />}/>
             {/*<Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi/>}/>*/}

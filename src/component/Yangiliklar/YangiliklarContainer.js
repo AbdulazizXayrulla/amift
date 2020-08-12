@@ -1,18 +1,17 @@
 import React from "react";
 import Yangiliklar from "./Yangiliklar";
-import StoreContext from "../../StoreContext";
 
-const YangiliklarContainer = () => {
-    return (
-        <StoreContext.Consumer>{
-            (store)=>{
-                return       <Yangiliklar
-                    yangiliklar={store.getState().yangiliklar}
-                />
-            }
-        }
+import {connect} from "react-redux";
 
-        </StoreContext.Consumer>
-    )
+
+
+let mapStateToProps=(state)=>{
+    return{
+        yangiliklar:state.yangiliklar
+    }
 }
+let mapDispatchToProps=(dispatch)=>{
+    return null
+}
+const YangiliklarContainer=connect(mapStateToProps,mapDispatchToProps)(Yangiliklar)
 export default YangiliklarContainer
