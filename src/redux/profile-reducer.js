@@ -19,17 +19,24 @@ const profileReducer=(state=initialState,action)=>{
             message:state.newPostText,
             likesCount: 0
         };
+let stateCopy={...state}
 
-        state.newPostText = ''
-        state.posts.push(messege);
+stateCopy.posts=[...state.posts]
+        stateCopy.newPostText = ''
+        stateCopy.posts.push(messege);
+        return stateCopy
 
     }
     if (action.type === EDIT_TEXT) {
-        state.newPostText = action.newText;
+        let stateCopy={...state}
 
+        stateCopy.newPostText = action.newText;
+        return stateCopy
 
     }
-    return state
+return state
+
+
 
 }
 export const addMessageActionCreator = () => ({

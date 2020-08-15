@@ -8,12 +8,6 @@ import * as serviceWorker from './serviceWorker';
 import store from "./redux/redux-store";
 import {Provider} from "react-redux";
 
-
-
-
-
- let rerenderEntireTree=(props)=>{
-
     ReactDOM.render(
         <React.StrictMode>
             <Provider store={store}>
@@ -22,16 +16,6 @@ import {Provider} from "react-redux";
         </React.StrictMode>,
         document.getElementById('root')
     );
-
-}
-
-rerenderEntireTree(store.getState());
-console.log(store.subscribe)
-
- store.subscribe(()=>{
-         rerenderEntireTree(store.getState())});
-
-
 
 
 serviceWorker.unregister();

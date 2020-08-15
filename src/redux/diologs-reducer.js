@@ -20,23 +20,27 @@ let initialState={
 }
 
 const diologsReducer=(state=initialState,action)=>{
+    let stateCopy={
+        ...state
+
+    }
     if(action.type===EDIT_DIOLOGS){
-        state.newMessage=action.text
+        stateCopy.newMessage=action.text
 
     }
     if(action.type===ADD_DIOLOGS){
 
-        state.messages.push({
+        stateCopy.messages.push({
             id:6,
             message:state.newMessage
 
         })
-        state.newMessage=''
+        stateCopy.newMessage=''
 
 
     }
 
-    return state
+    return stateCopy
 }
 export const editDialogsActionCreator = (text) => ({
     type: EDIT_DIOLOGS,
