@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/amift/static/css/main.1239dac9.chunk.css",
-    "main.js": "/amift/static/js/main.ee366703.chunk.js",
-    "main.js.map": "/amift/static/js/main.ee366703.chunk.js.map",
+    "main.js": "/amift/static/js/main.e071b944.chunk.js",
+    "main.js.map": "/amift/static/js/main.e071b944.chunk.js.map",
     "runtime-main.js": "/amift/static/js/runtime-main.2e6d27af.js",
     "runtime-main.js.map": "/amift/static/js/runtime-main.2e6d27af.js.map",
     "static/css/2.829c9cb5.chunk.css": "/amift/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.d74a9fd4.chunk.js": "/amift/static/js/2.d74a9fd4.chunk.js",
-    "static/js/2.d74a9fd4.chunk.js.map": "/amift/static/js/2.d74a9fd4.chunk.js.map",
+    "static/js/2.d5a16321.chunk.js": "/amift/static/js/2.d5a16321.chunk.js",
+    "static/js/2.d5a16321.chunk.js.map": "/amift/static/js/2.d5a16321.chunk.js.map",
     "index.html": "/amift/index.html",
-    "precache-manifest.436c563356629311357c21efb76b00e9.js": "/amift/precache-manifest.436c563356629311357c21efb76b00e9.js",
+    "precache-manifest.3517361d8706c631caa14fdbb924ba82.js": "/amift/precache-manifest.3517361d8706c631caa14fdbb924ba82.js",
     "service-worker.js": "/amift/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/amift/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.1239dac9.chunk.css.map": "/amift/static/css/main.1239dac9.chunk.css.map",
-    "static/js/2.d74a9fd4.chunk.js.LICENSE.txt": "/amift/static/js/2.d74a9fd4.chunk.js.LICENSE.txt"
+    "static/js/2.d5a16321.chunk.js.LICENSE.txt": "/amift/static/js/2.d5a16321.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2e6d27af.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.d74a9fd4.chunk.js",
+    "static/js/2.d5a16321.chunk.js",
     "static/css/main.1239dac9.chunk.css",
-    "static/js/main.ee366703.chunk.js"
+    "static/js/main.e071b944.chunk.js"
   ]
 }
