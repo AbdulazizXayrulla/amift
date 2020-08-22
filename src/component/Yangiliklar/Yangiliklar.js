@@ -1,29 +1,49 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
-
-
-
+import * as axios from "axios";
 
 const Yangiliklar = (props) => {
 
 
+    if (props.yangiliklar.mainContaint.length===0){
 
-let posts=props.yangiliklar.mainContaint.map(e=><div className='col-md-12 mb-5'>
+        axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response=>{
+
+                 props.setUser(response.data.items)
+        })
+
+    }
+    debugger
+
+
+
+
+
+
+
+
+    return (
+        <div className={s.Yangiliklar}>
+            <div className={s.fontSize}>Postlar</div>
+
+<div className="col-md-8">
+
+    {props.yangiliklar.mainContaint.map(e=><div className='col-md-12 mb-5' >
     <div className={s.postCard}>
-<div className="pl-2">
-    <div><span className={s.userTextColor}>User:</span>{e.userName}</div>
-    <div><span className={s.dateTextColor}>Date:</span>{e.date}</div>
-    <div className="mt-4"><img src={e.PostimageSrc} className={s.imageSize}/></div>
-</div>
+        <div className="pl-2">
+            <div><span className={s.userTextColor}>User:</span>{e.name}</div>
+            <div><span className={s.dateTextColor}>Date:</span></div>
+            <div className="mt-4"><img src='https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png' className={s.imageSize}/></div>
+        </div>
         <div className={s.postTextSize}>
-            {e.PostText}
+            {/*{e.PostText}*/}
         </div>
 
     </div>
     <div className="mt-3">
 
-        {e.isFollow?<button type='button' className='btn btn-danger' onClick={()=>props.Unfollow(e.userId)}>UnFollow</button>:
-            <button type='button' className='btn btn-success'onClick={()=>props.follow(e.userId)}>Follow</button>
+        {e.followed?<button type='button' className='btn btn-danger' onClick={()=>props.Unfollow(e.id)}>UnFollow</button>:
+            <button type='button' className='btn btn-success'onClick={()=>props.follow(e.id)}>Follow</button>
 
 
         }
@@ -35,16 +55,7 @@ let posts=props.yangiliklar.mainContaint.map(e=><div className='col-md-12 mb-5'>
 
     </div>
 
-</div>)
-
-
-    return (
-        <div className={s.Yangiliklar}>
-            <div className={s.fontSize}>Postlar</div>
-
-<div className="col-md-8">
-
-    {posts}
+</div>)}
 </div>
 
         </div>
