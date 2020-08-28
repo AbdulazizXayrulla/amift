@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
-
+import photo from '../../assets/image/amiftIcon.jpg'
 
 const Navbar = () => {
 
@@ -18,7 +18,7 @@ const Navbar = () => {
     return (<div>
         <nav className="navbar navbar-expand-md">
 
-                <NavLink to="/#" className='navbar-brand'><img src="http://xayrullayev.lark.ru/images/IMG_20200726_0932521.jpg?1595853808" className={s.image} alt="aa"/></NavLink>
+                <NavLink to="/#" className='navbar-brand'><img src={photo} className={s.image} alt="aa"/></NavLink>
             <button className="navbar-toggler " type="button" onClick={datchik}>
                 <span className="">
                     <img src="https://marvel-live.freetls.fastly.net/canvas/2020/8/62b62409a3544aa88e478967592b8e44?quality=95&fake=.png&width=54" alt=""/>
