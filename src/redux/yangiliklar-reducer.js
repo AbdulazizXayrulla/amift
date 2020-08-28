@@ -1,10 +1,17 @@
 let FOLLOW = 'FOLLOW'
 let UNFOLLOW = 'UN_FOLLOW'
 let SET_USER = 'SET_USER'
+let SET_USER_TOTAL_COUNT = 'SET_USER_TOTAL_COUNT'
+let SET_CURRENT_PAGE='SET_CURRENT_PAGE'
+
 
 
 let initialState = {
-    mainContaint: []
+    mainContaint: [],
+    totalCount:0,
+    PageSize:10,
+    currentPage:1
+
 }
 
 const yangiliklarReducer = (state = initialState, action = null) => {
@@ -43,6 +50,15 @@ const yangiliklarReducer = (state = initialState, action = null) => {
             }
             return stateCopy
         }
+        case SET_USER_TOTAL_COUNT:{
+        state.totalCount=action.totalCount
+            return state
+        }
+        case SET_CURRENT_PAGE:{
+            state.currentPage=action.page
+            return state
+        }
+
 
 
         default :
@@ -71,5 +87,16 @@ export const setUserActionCreater = (users) => {
     }
 
 }
+export const setUserTotalCount=(totalCount)=>{
+   return { type:SET_USER_TOTAL_COUNT,
+        totalCount:totalCount}
+}
+export const setCurrentPage=(page)=>{
+    return{
+        type:SET_CURRENT_PAGE,
+        page:page
+    }
+}
+
 
 export default yangiliklarReducer

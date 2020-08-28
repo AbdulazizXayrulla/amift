@@ -30,6 +30,12 @@ border: 2px solid #343F4B;
 }
 .imageSize{
     width: 350px;
+    height: 200px;
+}
+.activPage{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    font-weight: bolder;
 }
 .userTextColor{
     color: crimson;
