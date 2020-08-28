@@ -1,0 +1,53 @@
+.Yangiliklar{
+
+
+}
+.postCard{
+    margin-top: 23px;
+    display: flex;
+    width: 100%;
+    height: 335px;
+border: 2px solid #343F4B;
+    border-radius: 30px;
+    padding: 10px;
+}
+.postTextSize{
+    width: 50%;
+    height: 200px;
+    padding: 15px;
+    text-align: center;
+    padding-top: 65px;
+}
+.fontSize{
+
+
+    padding-left: 80px;
+    color: #679D3E;
+    font-family: Lato;
+    font-size: 32px;
+;
+
+}
+.imageSize{
+    width: 350px;
+    height: 200px;
+}
+.activPage{
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    font-weight: bolder;
+}
+.userTextColor{
+    color: crimson;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.dateTextColor{
+    color: green;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.iconSize{
+    width: 23px;
+    height: 23px;
+}
