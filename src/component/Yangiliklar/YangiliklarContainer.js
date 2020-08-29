@@ -1,17 +1,44 @@
 import React from "react";
-
-
 import {connect} from "react-redux";
 import {
-    FollowActionCreater, setCurrentPage, setPageSize,
+    FollowActionCreater, setCurrentPage,
     setUserActionCreater,
     setUserTotalCount,
     UnFollowActionCreater
 } from "../../redux/yangiliklar-reducer";
 import Yangiliklar from "./Yangiliklar";
+import * as axios from "axios";
+
+class Yangiliklarq extends React.Component {
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`).then(response => {
+
+            this.props.setUser(response.data.items);
+            this.props.setUserTotalCount(response.data.totalCount)
+        })
+    }
+
+    onChangePage = (q) => {
+        this.props.setCurrentPage(q)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`).then(response => {
+            this.props.setUser(response.data.items);
+        })
+    }
 
 
 
+    render() {
+        return <Yangiliklar
+            onChangePage={this.onChangePage}
+            totalCount={this.props.totalCount}
+            PageSize={this.props.PageSize}
+            currentPage={this.props.currentPage}
+            yangiliklar={this.props.yangiliklar}
+            Unfollow={this.props.Unfollow}
+            follow={this.props.follow}
+        />
+    }
+}
 let mapStateToProps=(state)=>{
 console.log(state)
     return{
@@ -35,5 +62,5 @@ let mapDispatchToProps=(dispatch)=>{
     }
 
 }
-const YangiliklarContainer=connect(mapStateToProps,mapDispatchToProps)(Yangiliklar)
+const YangiliklarContainer=connect(mapStateToProps,mapDispatchToProps)(Yangiliklarq)
 export default YangiliklarContainer
