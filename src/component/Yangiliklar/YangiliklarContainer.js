@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    FollowActionCreater, setCurrentPage,
+    FollowActionCreater, isFetching, setCurrentPage,
     setUserActionCreater,
     setUserTotalCount,
     UnFollowActionCreater
@@ -11,8 +11,9 @@ import * as axios from "axios";
 
 class Yangiliklarq extends React.Component {
     componentDidMount() {
+this.props.isFetchinga(false)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`).then(response => {
-
+            this.props.isFetchinga(true)
             this.props.setUser(response.data.items);
             this.props.setUserTotalCount(response.data.totalCount)
         })
@@ -20,7 +21,9 @@ class Yangiliklarq extends React.Component {
 
     onChangePage = (q) => {
         this.props.setCurrentPage(q)
+        this.props.isFetchinga(false)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`).then(response => {
+            this.props.isFetchinga(true)
             this.props.setUser(response.data.items);
         })
     }
@@ -36,6 +39,7 @@ class Yangiliklarq extends React.Component {
             yangiliklar={this.props.yangiliklar}
             Unfollow={this.props.Unfollow}
             follow={this.props.follow}
+            isFetching={this.props.isFetching}
         />
     }
 }
@@ -45,8 +49,8 @@ console.log(state)
         yangiliklar:state.yangiliklar,
         totalCount:state.yangiliklar.totalCount,
         PageSize:state.yangiliklar.PageSize,
-        currentPage:state.yangiliklar.currentPage
-
+        currentPage:state.yangiliklar.currentPage,
+        isFetching:state.yangiliklar.isFetching
     }
 }
 let mapDispatchToProps=(dispatch)=>{
@@ -56,7 +60,8 @@ let mapDispatchToProps=(dispatch)=>{
         Unfollow:(id)=>dispatch(UnFollowActionCreater(id)),
         setUser:(user)=>dispatch(setUserActionCreater(user)),
         setUserTotalCount:(totalCount)=>dispatch(setUserTotalCount(totalCount)),
-        setCurrentPage:(page)=>dispatch(setCurrentPage(page))
+        setCurrentPage:(page)=>dispatch(setCurrentPage(page)),
+        isFetchinga:(bool)=>dispatch(isFetching(bool))
 
 
     }

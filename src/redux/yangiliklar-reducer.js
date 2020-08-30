@@ -3,6 +3,7 @@ let UNFOLLOW = 'UN_FOLLOW'
 let SET_USER = 'SET_USER'
 let SET_USER_TOTAL_COUNT = 'SET_USER_TOTAL_COUNT'
 let SET_CURRENT_PAGE='SET_CURRENT_PAGE'
+let IS_FETCHING='IS_FETCHING'
 
 
 
@@ -10,7 +11,8 @@ let initialState = {
     mainContaint: [],
     totalCount:0,
     PageSize:10,
-    currentPage:1
+    currentPage:1,
+    isFetching:false
 
 }
 
@@ -58,6 +60,10 @@ const yangiliklarReducer = (state = initialState, action = null) => {
             state.currentPage=action.page
             return state
         }
+        case IS_FETCHING:{
+            state.isFetching=action.bool
+            return state
+        }
 
 
 
@@ -95,6 +101,12 @@ export const setCurrentPage=(page)=>{
     return{
         type:SET_CURRENT_PAGE,
         page:page
+    }
+}
+export const isFetching=(bool)=>{
+    return{
+        type:IS_FETCHING,
+        bool:bool
     }
 }
 

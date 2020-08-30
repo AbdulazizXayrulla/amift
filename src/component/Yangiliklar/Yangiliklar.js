@@ -1,6 +1,6 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
-
+import loding from '../../assets/gif/Loading.gif'
 
 
 const Yangiliklar = (props) => {
@@ -23,6 +23,8 @@ const Yangiliklar = (props) => {
                 }
 
             })}
+            {props.isFetching!=true? <img src={loding} alt=""/>:null}
+            {console.log(props)}
             {props.yangiliklar.mainContaint.map(e => <div className='col-md-12 mb-5'>
                 <div className={s.postCard}>
                     <div className="pl-2">
