@@ -74,19 +74,19 @@ const yangiliklarReducer = (state = initialState, action = null) => {
     }
 
 }
-export const FollowActionCreater = (id) => {
+export const follow = (id) => {
     return {
         type: FOLLOW,
         id: id
     }
 }
-export const UnFollowActionCreater = (id) => {
+export const Unfollow = (id) => {
     return {
         type: UNFOLLOW,
         id: id
     }
 }
-export const setUserActionCreater = (users) => {
+export const setUser = (users) => {
     return {
         type: SET_USER,
         users
@@ -103,7 +103,7 @@ export const setCurrentPage=(page)=>{
         page:page
     }
 }
-export const isFetching=(bool)=>{
+export const IsFetching=(bool)=>{
     return{
         type:IS_FETCHING,
         bool:bool

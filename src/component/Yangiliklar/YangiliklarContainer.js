@@ -1,19 +1,20 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    FollowActionCreater, isFetching, setCurrentPage,
-    setUserActionCreater,
+    follow, IsFetching, setCurrentPage,
+    setUser,
     setUserTotalCount,
-    UnFollowActionCreater
+    Unfollow
+
 } from "../../redux/yangiliklar-reducer";
 import Yangiliklar from "./Yangiliklar";
 import * as axios from "axios";
 
 class Yangiliklarq extends React.Component {
     componentDidMount() {
-this.props.isFetchinga(false)
+this.props.IsFetching(false)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`).then(response => {
-            this.props.isFetchinga(true)
+            this.props.IsFetching(true)
             this.props.setUser(response.data.items);
             this.props.setUserTotalCount(response.data.totalCount)
         })
@@ -21,9 +22,9 @@ this.props.isFetchinga(false)
 
     onChangePage = (q) => {
         this.props.setCurrentPage(q)
-        this.props.isFetchinga(false)
+        this.props.IsFetching(false)
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`).then(response => {
-            this.props.isFetchinga(true)
+            this.props.IsFetching(true)
             this.props.setUser(response.data.items);
         })
     }
@@ -53,19 +54,21 @@ console.log(state)
         isFetching:state.yangiliklar.isFetching
     }
 }
-let mapDispatchToProps=(dispatch)=>{
 
-    return{
-        follow:(id)=>dispatch(FollowActionCreater(id)),
-        Unfollow:(id)=>dispatch(UnFollowActionCreater(id)),
-        setUser:(user)=>dispatch(setUserActionCreater(user)),
-        setUserTotalCount:(totalCount)=>dispatch(setUserTotalCount(totalCount)),
-        setCurrentPage:(page)=>dispatch(setCurrentPage(page)),
-        isFetchinga:(bool)=>dispatch(isFetching(bool))
-
-
-    }
-
-}
-const YangiliklarContainer=connect(mapStateToProps,mapDispatchToProps)(Yangiliklarq)
+const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,setUser,setUserTotalCount,setCurrentPage,IsFetching})(Yangiliklarq)
 export default YangiliklarContainer
+
+// let mapDispatchToProps=(dispatch)=>{
+//
+//     return{
+//         follow:(id)=>dispatch(FollowActionCreater(id)),
+//         Unfollow:(id)=>dispatch(UnFollowActionCreater(id)),
+//         setUser:(user)=>dispatch(setUserActionCreater(user)),
+//         setUserTotalCount:(totalCount)=>dispatch(setUserTotalCount(totalCount)),
+//         setCurrentPage:(page)=>dispatch(setCurrentPage(page)),
+//         isFetchinga:(bool)=>dispatch(isFetching(bool))
+//
+//
+//     }
+//
+// }

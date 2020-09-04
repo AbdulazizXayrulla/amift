@@ -50,6 +50,7 @@ const Yangiliklar = (props) => {
                     }
 
 
+
                     <span className='float-right'><img
                         src="https://marvel-live.freetls.fastly.net/canvas/2020/8/9b1c6680c6fd4e2fad7ea497baac16aa?quality=95&fake=.png&width=54"
                         alt="" className={s.iconSize}/> like {e.likesCount}</span>

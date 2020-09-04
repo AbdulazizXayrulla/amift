@@ -6,7 +6,11 @@
     width: 15px;
     height: 15px;
 }
-
+.backImage{
+    height: 500px;
+background-image: url("https://www.lookslikefilm.com/wp-content/uploads/2020/01/Paul-Wilson.jpg");
+    background-size: 100% 100%;
+}
 
 
 

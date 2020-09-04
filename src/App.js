@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import Navbar from "./component/Navbar/Navbar";
+import Navbarr from "./component/Navbar/Navbar";
 import {BrowserRouter, Route,} from "react-router-dom";
 import UstozlarJamoasi from "./component/UstozlarJamoasi/UstozlarJamoasi";
 import Kutubxona from "./component/Kutubxona/Kutubxona";
@@ -18,9 +18,12 @@ import SignUp from "./component/SignUp/SignUp";
 function App(props) {
 
     return <BrowserRouter>
-        <div className='container-fluid'>
-            <Navbar/>
-            <Route path='/yangiliklar' render={()=><YangiliklarContainer />}/>
+        <div className='container-fluid px-0'>
+            <Navbarr/>
+
+                <Route path='/yangiliklar' render={()=><YangiliklarContainer />}/>
+
+
             {/*<Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi/>}/>*/}
             {/*<Route path='/Kutubxona' render={()=><Kutubxona />}/>*/}
             {/*<Route path='/OnlainDarslar' render={()=><OnlainDarslar />}/>*/}

@@ -1,11 +1,17 @@
 import React from "react";
 import s from './SignIn.module.css'
+import { AnimateGroup,AnimateOnChange  } from 'react-animation'
+
+
 
 const SignIn =()=>{
     return (
         <div className={s.Users}>
 
-            blablaqqq
+
+                <AnimateGroup animation="bounce">
+                </AnimateGroup>
+
 
         </div>
     );
