@@ -1,6 +1,9 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
 import loding from '../../assets/gif/Loading.gif'
+import {NavLink} from "react-router-dom";
+import PreLoader from "../../assets/PreLoader/PreLoader";
+
 
 
 const Yangiliklar = (props) => {
@@ -23,16 +26,20 @@ const Yangiliklar = (props) => {
                 }
 
             })}
-            {props.isFetching!=true? <img src={loding} alt=""/>:null}
-            {console.log(props)}
+            {props.isFetching!=true? <PreLoader/>:null}
+
             {props.yangiliklar.mainContaint.map(e => <div className='col-md-12 mb-5'>
                 <div className={s.postCard}>
                     <div className="pl-2">
                         <div><span className={s.userTextColor}>User:</span>{e.name}</div>
                         <div><span className={s.dateTextColor}>Date:</span></div>
-                        <div className="mt-4"><img
+                        <div className="mt-4">
+                            <NavLink to={'/profile/'+e.id}>
+                            <img
                             src={e.photos.small != null ? e.photos.small : 'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png'}
-                            className={s.imageSize}/></div>
+                            className={s.imageSize}/>
+                            </NavLink>
+                            </div>
                     </div>
                     <div className={s.postTextSize}>
 
