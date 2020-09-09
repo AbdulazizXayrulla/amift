@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "decc43a4dd2b0de57c85857a22b057a6",
+    "revision": "267c3e06ae4ad4dc6b1d7dabf9ae2bde",
     "url": "/amift/index.html"
   },
   {
-    "revision": "e12a30879dda9ef8a2ea",
+    "revision": "6a7617968b07331054c2",
     "url": "/amift/static/css/2.829c9cb5.chunk.css"
   },
   {
-    "revision": "b01ccf5f99b8049b87b5",
+    "revision": "a21fb4f35ec1a9106d63",
     "url": "/amift/static/css/main.1529962a.chunk.css"
   },
   {
-    "revision": "e12a30879dda9ef8a2ea",
-    "url": "/amift/static/js/2.6b1d8068.chunk.js"
+    "revision": "6a7617968b07331054c2",
+    "url": "/amift/static/js/2.dee7d7cf.chunk.js"
   },
   {
     "revision": "3453b8997016469371284a28c0e873e2",
-    "url": "/amift/static/js/2.6b1d8068.chunk.js.LICENSE.txt"
+    "url": "/amift/static/js/2.dee7d7cf.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b01ccf5f99b8049b87b5",
-    "url": "/amift/static/js/main.0d1889fc.chunk.js"
+    "revision": "a21fb4f35ec1a9106d63",
+    "url": "/amift/static/js/main.b15fa25f.chunk.js"
   },
   {
     "revision": "90999ada6bf1983cb530",
