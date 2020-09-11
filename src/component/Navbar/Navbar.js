@@ -4,6 +4,7 @@ import {NavLink} from "react-router-dom";
 import photo from '../../assets/image/amiftIcon.jpg'
 import {Carousel, Nav, NavDropdown} from "react-bootstrap";
 import Navbar from 'react-bootstrap/Navbar'
+
 const Navbarr = () => {
 
     let datchikComponent = React.createRef()
@@ -17,66 +18,73 @@ const Navbarr = () => {
 
     return (
         <div className={s.backImage}>
-        <Navbar collapseOnSelect expand="md" >
-            <Navbar.Brand href="#"><img src={photo} className={s.image} alt="aa"/></Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className="mr-auto">
-                    <Nav.Link  >
-                        <NavLink to="/yangiliklar"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold' >yangiliklar</NavLink>
+            <Navbar collapseOnSelect expand="md">
+                <Navbar.Brand href="#"><img src={photo} className={s.image} alt="aa"/></Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link>
+                            <NavLink to="/yangiliklar" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>yangiliklar</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/UstozlarJamoasi"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>UstozlarJamoasi</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/UstozlarJamoasi" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>UstozlarJamoasi</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/Kutubxona"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>Kutubxona</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/Kutubxona" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>Kutubxona</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/OnlainDarslar"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>OnlainDarslar</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/OnlainDarslar" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>OnlainDarslar</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/IshJoylari"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>IshJoylari</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/IshJoylari" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>IshJoylari</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/dialogs"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>dialogs</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/dialogs" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>dialogs</NavLink>
 
-                    </Nav.Link>
-                    <Nav.Link  >
-                        <NavLink to="/profile"style={{fontSize: '20px', color: '#9C9B9C'}} className='text-decoration-none font-weight-bold'>profile</NavLink>
+                        </Nav.Link>
+                        <Nav.Link>
+                            <NavLink to="/profile" style={{fontSize: '20px', color: '#9C9B9C'}}
+                                     className='text-decoration-none font-weight-bold'>profile</NavLink>
 
-                    </Nav.Link>
-                    {/*<NavDropdown title="OnlainDarslar" id="collasible-nav-dropdown">*/}
-                    {/*    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}
-                    {/*    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>*/}
-                    {/*    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>*/}
-                    {/*    <NavDropdown.Divider />*/}
-                    {/*    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>*/}
-                    {/*</NavDropdown>*/}
-                </Nav>
-                <Nav>
-                    <Nav.Link><NavLink to="/SignUp" className='nav-link'>
-                        <button type={'button'} className='btn btn-success'>Sign Up</button>
-                    </NavLink></Nav.Link>
-                    <Nav.Link eventKey={2}>
-                        <NavLink to="/SignIn" className='nav-link'>
-                            <button type={'button'} className='btn btn-danger'>Sign In</button>
-                        </NavLink>
-                    </Nav.Link>
+                        </Nav.Link>
+                        {/*<NavDropdown title="OnlainDarslar" id="collasible-nav-dropdown">*/}
+                        {/*    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>*/}
+                        {/*    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>*/}
+                        {/*    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>*/}
+                        {/*    <NavDropdown.Divider />*/}
+                        {/*    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>*/}
+                        {/*</NavDropdown>*/}
+                    </Nav>
+                    <Nav>
+                        <Nav.Link><NavLink to="/SignUp" className='nav-link'>
+                            <button type={'button'} className='btn btn-success'>Sign Up</button>
+                        </NavLink></Nav.Link>
+                        <Nav.Link eventKey={2}>
+                            <NavLink to="/SignIn" className='nav-link'>
+                                <button type={'button'} className='btn btn-danger'>Sign In</button>
+                            </NavLink>
+                        </Nav.Link>
 
-                </Nav>
-            </Navbar.Collapse>
-        </Navbar>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
             <Carousel>
                 <Carousel.Item>
 
-                    <div className="" style={{height:'300px'}}></div>
+                    <div className="" style={{height: '300px'}}></div>
                     <Carousel.Caption>
-                        <h2 className='text-white text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
+                        <h2 className=' text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
                             Texnoligiyalar <br/> fakultetining rasmiy saytiga</h2>
                         <h3>First slide label</h3>
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -84,9 +92,9 @@ const Navbarr = () => {
                 </Carousel.Item>
                 <Carousel.Item>
 
-                    <div className="" style={{height:'300px'}}></div>
+                    <div className="" style={{height: '300px'}}></div>
                     <Carousel.Caption>
-                        <h2 className='text-white text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
+                        <h2 className=' text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
                             Texnoligiyalar <br/> fakultetining rasmiy saytiga</h2>
                         <h3>Second slide label</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -94,18 +102,18 @@ const Navbarr = () => {
                 </Carousel.Item>
                 <Carousel.Item>
 
-                    <div className="" style={{height:'300px'}}></div>
+                    <div className="" style={{height: '300px'}}></div>
                     <Carousel.Caption>
-                        <h2 className='text-white text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
+                        <h2 className=' text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
                             Texnoligiyalar <br/> fakultetining rasmiy saytiga</h2>
                         <h3>Third slide label</h3>
                         <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
                     </Carousel.Caption>
                 </Carousel.Item> <Carousel.Item>
 
-                <div className="" style={{height:'300px'}}></div>
+                <div className="" style={{height: '300px'}}></div>
                 <Carousel.Caption>
-                    <h2 className='text-white text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
+                    <h2 className=' text-center pt-4'>Xush Kelibsiz <br/> Amaliy Matematika va Intekektual
                         Texnoligiyalar <br/> fakultetining rasmiy saytiga</h2>
                     <h3>Third slide label</h3>
                     <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
@@ -114,6 +122,7 @@ const Navbarr = () => {
 
 
             </Carousel>
+
         </div>
         // <div className={s.backImage}>
         //     <nav className="navbar navbar-expand-md">

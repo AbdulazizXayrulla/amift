@@ -8,9 +8,14 @@
 }
 .backImage{
     height: 500px;
-background-image: url("https://www.lookslikefilm.com/wp-content/uploads/2020/01/Paul-Wilson.jpg");
+/*background-image: url("https://www.lookslikefilm.com/wp-content/uploads/2020/01/Paul-Wilson.jpg");*/
     background-size: 100% 100%;
 }
-
+a{
+    /*font-family: Helvetica Neue;*/
+}
+h2,h3,p{
+    color:#4EF73F !important;
+}
 
 

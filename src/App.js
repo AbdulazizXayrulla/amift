@@ -13,25 +13,32 @@ import ProfileContainer from "./component/Profile/ProfileContainer";
 
 function App(props) {
 
-    return <BrowserRouter>
-        <div className='container-fluid px-0'>
-            <Navbarr/>
+    return <BrowserRouter >
+
+
+        <div className="mainFon container-fluid">
+            <div className='container px-0'>
+                <Navbarr/>
 
                 <Route path='/yangiliklar' render={()=><YangiliklarContainer />}/>
 
 
-            {/*<Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi/>}/>*/}
-            {/*<Route path='/Kutubxona' render={()=><Kutubxona />}/>*/}
-            {/*<Route path='/OnlainDarslar' render={()=><OnlainDarslar />}/>*/}
-            {/*<Route path='/IshJoylari' render={()=><IshJoylari />}/>*/}
-            <Route path='/dialogs'
-                   render={ () => <DialogsContainer/> }/>
-            <Route path='/profile'
-                   render={ () => <ProfileContainer/> }/>
-            <Route path='/SignIn' component={SignIn}/>
-            <Route path='/SignUp' component={SignUp}/>
+                {/*<Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi/>}/>*/}
+                {/*<Route path='/Kutubxona' render={()=><Kutubxona />}/>*/}
+                {/*<Route path='/OnlainDarslar' render={()=><OnlainDarslar />}/>*/}
+                {/*<Route path='/IshJoylari' render={()=><IshJoylari />}/>*/}
+                <Route path='/dialogs'
+                       render={ () => <DialogsContainer/> }/>
+                <Route path='/profile'
+                       render={ () => <ProfileContainer/> }/>
+                <Route path='/SignIn' component={SignIn}/>
+                <Route path='/SignUp' component={SignUp}/>
+
+            </div>
+            <div style={{height: '700px'}}></div>
 
         </div>
+
     </BrowserRouter>
 
         ;
