@@ -1,19 +1,20 @@
 import React from "react";
 import s from './SignIn.module.css'
-import { AnimateGroup,AnimateOnChange  } from 'react-animation'
+import {NavLink} from "react-router-dom";
 
 
 
-const SignIn =()=>{
+
+const SignIn =(props)=>{
+
     return (
-        <div className={s.Users}>
+        <NavLink to="/SignIn" className='nav-link'>
+            {
+                props.isAuth?props.login:<button type={'button'} className='btn btn-danger'>Sign In</button>
+            }
 
 
-                <AnimateGroup animation="bounce">
-                </AnimateGroup>
-
-
-        </div>
+        </NavLink>
     );
 }
 export default SignIn

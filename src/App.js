@@ -5,7 +5,6 @@ import Navbarr from "./component/Navbar/Navbar";
 import {BrowserRouter, Route,} from "react-router-dom";
 import YangiliklarContainer from "./component/Yangiliklar/YangiliklarContainer";
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
-import SignIn from "./component/SignIn/SignIn";
 import SignUp from "./component/SignUp/SignUp";
 import ProfileContainer from "./component/Profile/ProfileContainer";
 
@@ -29,9 +28,9 @@ function App(props) {
                 {/*<Route path='/IshJoylari' render={()=><IshJoylari />}/>*/}
                 <Route path='/dialogs'
                        render={ () => <DialogsContainer/> }/>
-                <Route path='/profile'
+                <Route path='/profile/:userId?'
                        render={ () => <ProfileContainer/> }/>
-                <Route path='/SignIn' component={SignIn}/>
+                {/*<Route path='/SignIn' render={()=><SignInContainer/>}/>*/}
                 <Route path='/SignUp' component={SignUp}/>
 
             </div>
