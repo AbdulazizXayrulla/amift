@@ -9,27 +9,25 @@ import {
 } from "../../redux/yangiliklar-reducer";
 import Yangiliklar from "./Yangiliklar";
 import * as axios from "axios";
+import {UserApi} from "../../api/api";
+
 
 class Yangiliklarq extends React.Component {
     componentDidMount() {
 this.props.IsFetching(false)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`,{
-            withCredentials:true
-        }).then(response => {
+       UserApi.getUser(this.props.currentPage,this.props.PageSize).then(data => {
             this.props.IsFetching(true)
-            this.props.setUser(response.data.items);
-            this.props.setUserTotalCount(response.data.totalCount)
+            this.props.setUser(data.items);
+            this.props.setUserTotalCount(data.totalCount)
         })
     }
 
     onChangePage = (q) => {
         this.props.setCurrentPage(q)
         this.props.IsFetching(false)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`,{
-            withCredentials:true
-        }).then(response => {
+        UserApi.getUser(q,this.props.PageSize).then(data => {
             this.props.IsFetching(true)
-            this.props.setUser(response.data.items);
+            this.props.setUser(data.items);
         })
     }
 

@@ -1,0 +1,18 @@
+import * as axios from "axios";
+
+
+const instance=axios.create({
+    baseURL:'https://social-network.samuraijs.com/api/1.0/',
+    withCredentials:true,
+    headers:{
+        "API-KEY":"b8164b60-5a15-4aa7-b434-635f58faebf6"
+    }
+})
+export const UserApi={
+    getUser(q,PageSize){
+        return  instance.get(`users?page=${q}&count=${PageSize}`,{
+
+        }).then(response=>{return response.data})
+    }
+}
+
