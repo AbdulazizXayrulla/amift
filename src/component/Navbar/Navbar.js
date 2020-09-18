@@ -42,9 +42,9 @@ const Navbarr = () => {
                                  className={'text-decoration-none font-weight-bold nav-link ' + `${s.animationTarget6}`}>profile</NavLink>
                     </Nav>
                     <Nav className="text-center ml-auto">
-                        <NavLink to="/SignUp" className='nav-link'>
-                            <button type={'button'} className='btn btn-success'>Sign Up</button>
-                        </NavLink>
+                        {/*<NavLink to="/SignUp" className='nav-link'>*/}
+                        {/*    <button type={'button'} className='btn btn-success'>Sign Up</button>*/}
+                        {/*</NavLink>*/}
 
 
 

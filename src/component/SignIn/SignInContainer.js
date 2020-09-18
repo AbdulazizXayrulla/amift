@@ -11,7 +11,6 @@ class SignInContainer extends React.Component {
         axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
             withCredentials:true
         }).then(response => {
-console.log(response)
             let {id,login,email}=response.data.data
             this.props.setUserData(id,email,login);
 

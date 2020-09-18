@@ -13,7 +13,9 @@ import * as axios from "axios";
 class Yangiliklarq extends React.Component {
     componentDidMount() {
 this.props.IsFetching(false)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.PageSize}`,{
+            withCredentials:true
+        }).then(response => {
             this.props.IsFetching(true)
             this.props.setUser(response.data.items);
             this.props.setUserTotalCount(response.data.totalCount)
@@ -23,7 +25,9 @@ this.props.IsFetching(false)
     onChangePage = (q) => {
         this.props.setCurrentPage(q)
         this.props.IsFetching(false)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${q}&count=${this.props.PageSize}`,{
+            withCredentials:true
+        }).then(response => {
             this.props.IsFetching(true)
             this.props.setUser(response.data.items);
         })

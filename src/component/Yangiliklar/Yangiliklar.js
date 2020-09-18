@@ -3,7 +3,7 @@ import s from './Yangiliklar.module.css'
 import loding from '../../assets/gif/Loading.gif'
 import {NavLink} from "react-router-dom";
 import PreLoader from "../../assets/PreLoader/PreLoader";
-
+import * as axios from "axios";
 
 
 const Yangiliklar = (props) => {
@@ -26,7 +26,7 @@ const Yangiliklar = (props) => {
                 }
 
             })}
-            {props.isFetching!=true? <PreLoader/>:null}
+            {props.isFetching != true ? <PreLoader/> : null}
 
             {props.yangiliklar.mainContaint.map(e => <div className='col-md-12 mb-5'>
                 <div className={s.postCard}>
@@ -34,12 +34,12 @@ const Yangiliklar = (props) => {
                         <div><span className={s.userTextColor}>User:</span>{e.name}</div>
                         <div><span className={s.dateTextColor}>Date:</span></div>
                         <div className="mt-4">
-                            <NavLink to={'/profile/'+e.id}>
-                            <img
-                            src={e.photos.small != null ? e.photos.small : 'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png'}
-                            className={s.imageSize}/>
+                            <NavLink to={'/profile/' + e.id}>
+                                <img
+                                    src={e.photos.small != null ? e.photos.small : 'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png'}
+                                    className={s.imageSize}/>
                             </NavLink>
-                            </div>
+                        </div>
                     </div>
                     <div className={s.postTextSize}>
 
@@ -49,13 +49,45 @@ const Yangiliklar = (props) => {
                 <div className="mt-3">
 
                     {e.followed ? <button type='button' className='btn btn-danger'
-                                          onClick={() => props.Unfollow(e.id)}>UnFollow</button> :
+                                          onClick={() => {
+                                              axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`,
+                                                  {
+                                                      withCredentials:true,
+                                                      headers:{
+                                                          "API-KEY":"b8164b60-5a15-4aa7-b434-635f58faebf6"
+                                                      }
+
+                                                  }).then(response => {
+
+                                                  if(response.data.resultCode==0){
+                                                      props.Unfollow(e.id)
+                                                  }
+                                              })
+
+                                          }
+
+                                          }>UnFollow</button> :
                         <button type='button' className='btn btn-success'
-                                onClick={() => props.follow(e.id)}>Follow</button>
+                                onClick={() => {
+                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`,{},
+                                        {withCredentials:true,
+                                            headers:{
+                                                "API-KEY":"b8164b60-5a15-4aa7-b434-635f58faebf6"
+                                            }
+                                        }).then(response => {
+
+                                        if(response.data.resultCode==0){
+                                            props.follow(e.id)
+                                        }
+                                    })
+
+                                }
+
+                                }
+                                >Follow</button>
 
 
                     }
-
 
 
                     <span className='float-right'><img
