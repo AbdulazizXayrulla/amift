@@ -48,47 +48,55 @@ const Yangiliklar = (props) => {
                 </div>
                 <div className="mt-3">
 
-                    {e.followed ? <button type='button' className='btn btn-danger'
+                    {e.followed ? <button type='button'  disabled={props.IsFollowFetchingProgress.some(id=>id==e.id)} className='btn btn-danger'
                                           onClick={() => {
+
+                                              props.IsFollowFetchingToggle(true,e.id);
                                               axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`,
                                                   {
-                                                      withCredentials:true,
-                                                      headers:{
-                                                          "API-KEY":"b8164b60-5a15-4aa7-b434-635f58faebf6"
+                                                      withCredentials: true,
+                                                      headers: {
+                                                          "API-KEY": "b8164b60-5a15-4aa7-b434-635f58faebf6"
                                                       }
 
                                                   }).then(response => {
 
-                                                  if(response.data.resultCode==0){
+                                                  if (response.data.resultCode == 0) {
+
                                                       props.Unfollow(e.id)
                                                   }
+                                                  props.IsFollowFetchingToggle(false,e.id);
                                               })
 
                                           }
 
                                           }>UnFollow</button> :
-                        <button type='button' className='btn btn-success'
+                        <button type='button' className='btn btn-success' disabled={props.IsFollowFetchingProgress.some(id=>id==e.id)}
                                 onClick={() => {
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`,{},
-                                        {withCredentials:true,
-                                            headers:{
-                                                "API-KEY":"b8164b60-5a15-4aa7-b434-635f58faebf6"
+
+                                    props.IsFollowFetchingToggle(true,e.id);
+                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`, {},
+                                        {
+                                            withCredentials: true,
+                                             headers: {
+                                                "API-KEY": "b8164b60-5a15-4aa7-b434-635f58faebf6"
                                             }
                                         }).then(response => {
 
-                                        if(response.data.resultCode==0){
+                                        if (response.data.resultCode == 0) {
+
                                             props.follow(e.id)
                                         }
+                                        props.IsFollowFetchingToggle(false,e.id);
                                     })
 
                                 }
 
                                 }
-                                >Follow</button>
+                        >Follow</button>
 
 
                     }
-
 
                     <span className='float-right'><img
                         src="https://marvel-live.freetls.fastly.net/canvas/2020/8/9b1c6680c6fd4e2fad7ea497baac16aa?quality=95&fake=.png&width=54"

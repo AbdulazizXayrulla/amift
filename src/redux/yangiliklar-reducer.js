@@ -4,6 +4,7 @@ let SET_USER = 'SET_USER'
 let SET_USER_TOTAL_COUNT = 'SET_USER_TOTAL_COUNT'
 let SET_CURRENT_PAGE='SET_CURRENT_PAGE'
 let IS_FETCHING='IS_FETCHING'
+let IS_FOLLOW_FETCHING='IS_FOLLOW_FETCHING'
 
 
 
@@ -12,7 +13,8 @@ let initialState = {
     totalCount:0,
     PageSize:10,
     currentPage:1,
-    isFetching:false
+    isFetching:false,
+    isFollowFetchingProgress:[]
 
 }
 
@@ -64,6 +66,16 @@ const yangiliklarReducer = (state = initialState, action = null) => {
             state.isFetching=action.bool
             return state
         }
+        case IS_FOLLOW_FETCHING:{
+
+            return {...state,
+
+                isFollowFetchingProgress:action.FollowBool?[
+                    ...state.isFollowFetchingProgress,action.userId
+                ]:state.isFollowFetchingProgress.filter(id=>id!=action.userId)
+
+            }
+        }
 
 
 
@@ -107,6 +119,13 @@ export const IsFetching=(bool)=>{
     return{
         type:IS_FETCHING,
         bool:bool
+    }
+}
+export const IsFollowFetchingToggle=(FollowBool,userId)=>{
+    return{
+        type:IS_FOLLOW_FETCHING,
+       FollowBool,
+        userId
     }
 }
 

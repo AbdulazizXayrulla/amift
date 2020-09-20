@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    follow, IsFetching, setCurrentPage,
+    follow, IsFetching, IsFollowFetchingToggle, setCurrentPage,
     setUser,
     setUserTotalCount,
     Unfollow
@@ -34,6 +34,7 @@ this.props.IsFetching(false)
 
 
     render() {
+        console.log(this.props)
         return <Yangiliklar
             onChangePage={this.onChangePage}
             totalCount={this.props.totalCount}
@@ -43,21 +44,23 @@ this.props.IsFetching(false)
             Unfollow={this.props.Unfollow}
             follow={this.props.follow}
             isFetching={this.props.isFetching}
+            IsFollowFetchingToggle={this.props.IsFollowFetchingToggle}
+            IsFollowFetchingProgress={this.props.IsFollowFetchingProgress}
         />
     }
 }
 let mapStateToProps=(state)=>{
-console.log(state)
     return{
         yangiliklar:state.yangiliklar,
         totalCount:state.yangiliklar.totalCount,
         PageSize:state.yangiliklar.PageSize,
         currentPage:state.yangiliklar.currentPage,
-        isFetching:state.yangiliklar.isFetching
+        isFetching:state.yangiliklar.isFetching,
+        IsFollowFetchingProgress:state.yangiliklar.isFollowFetchingProgress
     }
 }
 
-const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,setUser,setUserTotalCount,setCurrentPage,IsFetching})(Yangiliklarq)
+const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,setUser,setUserTotalCount,setCurrentPage,IsFetching,IsFollowFetchingToggle})(Yangiliklarq)
 export default YangiliklarContainer
 
 // let mapDispatchToProps=(dispatch)=>{
