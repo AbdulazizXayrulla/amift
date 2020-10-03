@@ -10,7 +10,7 @@ import ProfileContainer from "./component/Profile/ProfileContainer";
 
 
 
-function App(props) {
+function App() {
 
     return <BrowserRouter >
 

@@ -1,9 +1,9 @@
 import React from "react";
 import s from './Yangiliklar.module.css'
-import loding from '../../assets/gif/Loading.gif'
+
 import {NavLink} from "react-router-dom";
 import PreLoader from "../../assets/PreLoader/PreLoader";
-import * as axios from "axios";
+
 
 
 const Yangiliklar = (props) => {
@@ -48,47 +48,40 @@ const Yangiliklar = (props) => {
                 </div>
                 <div className="mt-3">
 
-                    {e.followed ? <button type='button'  disabled={props.IsFollowFetchingProgress.some(id=>id==e.id)} className='btn btn-danger'
+                    {e.followed ? <button type='button' disabled={props.IsFollowFetchingProgress.some(id => id == e.id)}
+                                          className='btn btn-danger'
                                           onClick={() => {
-
-                                              props.IsFollowFetchingToggle(true,e.id);
-                                              axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`,
-                                                  {
-                                                      withCredentials: true,
-                                                      headers: {
-                                                          "API-KEY": "b8164b60-5a15-4aa7-b434-635f58faebf6"
-                                                      }
-
-                                                  }).then(response => {
-
-                                                  if (response.data.resultCode == 0) {
-
-                                                      props.Unfollow(e.id)
-                                                  }
-                                                  props.IsFollowFetchingToggle(false,e.id);
-                                              })
+                                              props.Unfollow(e.id)
+                                              //  props.IsFollowFetchingToggle(true,e.id);
+                                              // UserApi.Unfollow(e.id).then(response => {
+                                              //
+                                              //      if (response.resultCode == 0) {
+                                              //
+                                              //          props.Unfollow(e.id)
+                                              //      }
+                                              //      props.IsFollowFetchingToggle(false,e.id);
+                                              //  })
 
                                           }
 
                                           }>UnFollow</button> :
-                        <button type='button' className='btn btn-success' disabled={props.IsFollowFetchingProgress.some(id=>id==e.id)}
+                        <button type='button' className='btn btn-success'
+                                disabled={props.IsFollowFetchingProgress.some(id => id == e.id)}
                                 onClick={() => {
 
-                                    props.IsFollowFetchingToggle(true,e.id);
-                                    axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${e.id}`, {},
-                                        {
-                                            withCredentials: true,
-                                             headers: {
-                                                "API-KEY": "b8164b60-5a15-4aa7-b434-635f58faebf6"
-                                            }
-                                        }).then(response => {
 
-                                        if (response.data.resultCode == 0) {
+                                    props.follow(e.id)
 
-                                            props.follow(e.id)
-                                        }
-                                        props.IsFollowFetchingToggle(false,e.id);
-                                    })
+
+                                    // props.IsFollowFetchingToggle(true,e.id);
+                                    // UserApi.follow(e.id).then(response => {
+                                    //
+                                    //     if (response.resultCode == 0) {
+                                    //
+                                    //         props.follow(e.id)
+                                    //     }
+                                    //     props.IsFollowFetchingToggle(false,e.id);
+                                    // })
 
                                 }
 

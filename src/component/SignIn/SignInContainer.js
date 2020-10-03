@@ -3,18 +3,12 @@ import React from "react";
 import SignIn from "./SignIn";
 import {connect} from "react-redux";
 import * as axios from "axios";
-import {setUserData} from "../../redux/auth-reducer";
+import {setMe, setUserData} from "../../redux/auth-reducer";
 
 
 class SignInContainer extends React.Component {
     componentDidMount() {
-        axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
-            withCredentials:true
-        }).then(response => {
-            let {id,login,email}=response.data.data
-            this.props.setUserData(id,email,login);
-
-        })
+      this.props.setMe()
     }
 
     render() {
@@ -34,4 +28,4 @@ login:state.auth.login,
 })
 }
 
-export default connect(mapStateToProps,{setUserData})(SignInContainer)
+export default connect(mapStateToProps,{setUserData,setMe})(SignInContainer)

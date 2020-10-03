@@ -1,3 +1,5 @@
+import {ProfileApi} from "../api/api";
+
 const ADD_MESSAGE='ADD-MESSAGE'
 const EDIT_TEXT='EDIT-TEXT'
 const SET_USER_PROFILE='SET_USER_PROFILE'
@@ -56,6 +58,13 @@ export const setUserProfile = (profile) => ({
     type: SET_USER_PROFILE,
     profile
 })
+export const getProfie=(userId)=>(dispatch)=>{
+    ProfileApi.getProFile(userId).then(response=>{
+
+
+        dispatch(setUserProfile(response.data));
+    })
+}
 
 export default profileReducer
 

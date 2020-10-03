@@ -1,34 +1,27 @@
 import React from "react";
 import {connect} from "react-redux";
 import {
-    follow, IsFetching, IsFollowFetchingToggle, setCurrentPage,
-    setUser,
-    setUserTotalCount,
-    Unfollow
+    follow, getUserThunk, IsFollowFetchingToggle, setCurrentPage, Unfollow
 
 } from "../../redux/yangiliklar-reducer";
 import Yangiliklar from "./Yangiliklar";
-import * as axios from "axios";
-import {UserApi} from "../../api/api";
+
 
 
 class Yangiliklarq extends React.Component {
     componentDidMount() {
-this.props.IsFetching(false)
-       UserApi.getUser(this.props.currentPage,this.props.PageSize).then(data => {
-            this.props.IsFetching(true)
-            this.props.setUser(data.items);
-            this.props.setUserTotalCount(data.totalCount)
-        })
+this.props.getUserThunk(this.props.currentPage,this.props.PageSize)
     }
 
     onChangePage = (q) => {
+
         this.props.setCurrentPage(q)
-        this.props.IsFetching(false)
-        UserApi.getUser(q,this.props.PageSize).then(data => {
-            this.props.IsFetching(true)
-            this.props.setUser(data.items);
-        })
+        this.props.getUserThunk(q,this.props.PageSize)
+        // this.props.IsFetching(false)
+        // UserApi.getUser(q,this.props.PageSize).then(data => {
+        //     this.props.IsFetching(true)
+        //     this.props.setUser(data.items);
+        // })
     }
 
 
@@ -44,7 +37,6 @@ this.props.IsFetching(false)
             Unfollow={this.props.Unfollow}
             follow={this.props.follow}
             isFetching={this.props.isFetching}
-            IsFollowFetchingToggle={this.props.IsFollowFetchingToggle}
             IsFollowFetchingProgress={this.props.IsFollowFetchingProgress}
         />
     }
@@ -60,7 +52,8 @@ let mapStateToProps=(state)=>{
     }
 }
 
-const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,setUser,setUserTotalCount,setCurrentPage,IsFetching,IsFollowFetchingToggle})(Yangiliklarq)
+const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,
+    setCurrentPage,IsFollowFetchingToggle,getUserThunk})(Yangiliklarq)
 export default YangiliklarContainer
 
 // let mapDispatchToProps=(dispatch)=>{
