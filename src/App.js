@@ -7,6 +7,7 @@ import YangiliklarContainer from "./component/Yangiliklar/YangiliklarContainer";
 import DialogsContainer from "./component/Dialogs/DialogsContainer";
 import SignUp from "./component/SignUp/SignUp";
 import ProfileContainer from "./component/Profile/ProfileContainer";
+import LoginPage from "./component/Login/Login";
 
 
 
@@ -30,7 +31,7 @@ function App() {
                        render={ () => <DialogsContainer/> }/>
                 <Route path='/profile/:userId?'
                        render={ () => <ProfileContainer/> }/>
-                {/*<Route path='/SignIn' render={()=><SignInContainer/>}/>*/}
+                <Route path='/SignIn' render={()=><LoginPage/>}/>
                 <Route path='/SignUp' component={SignUp}/>
 
             </div>

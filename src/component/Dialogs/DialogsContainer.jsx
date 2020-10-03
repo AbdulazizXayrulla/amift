@@ -7,12 +7,13 @@ import {connect} from "react-redux";
 let mapStateToProps = (state) => {
 
     return {
-        state: state.dialogsPage
+        state: state.dialogsPage,
+        isAuth:state.auth.isAuth
     }
 }
 
 let mapDispatchToProps = (dispatch) => {
-    console.log(dispatch)
+
     return{
         addMessage:() => dispatch(addDialogsActionCreator()),
         onChangeMessage:(e) => dispatch(editDialogsActionCreator(e))

@@ -12,8 +12,13 @@ const authReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case SET_USER_DATA: {
-            state.isAuth=true
-            return {...state, ...action.data}
+
+            return {
+                ...state,
+                ...action.data,
+                isAuth: true
+            }
+
 
 
         }
@@ -35,8 +40,10 @@ export const setMe=()=>{
     return (dispatch)=>{
         AuthApi.me()
             .then(response => {
+                if (response.data.resultCode === 0) {
                 let {id,login,email}=response.data.data
                 dispatch(setUserData(id,email,login));
+                }
 
             })
     }

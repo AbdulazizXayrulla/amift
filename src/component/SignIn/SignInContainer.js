@@ -1,8 +1,6 @@
 import React from "react";
-
 import SignIn from "./SignIn";
 import {connect} from "react-redux";
-import * as axios from "axios";
 import {setMe, setUserData} from "../../redux/auth-reducer";
 
 
@@ -13,7 +11,7 @@ class SignInContainer extends React.Component {
 
     render() {
         return (
-            <SignIn {...this.props}/>
+            <SignIn {...this.props} />
         );
     }
 
