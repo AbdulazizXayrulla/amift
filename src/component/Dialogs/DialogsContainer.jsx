@@ -3,6 +3,7 @@ import {addDialogsActionCreator, editDialogsActionCreator} from "../../redux/dio
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {widthAuthRedirect} from "../../hoc/WidthAuthRedirect";
+import {compose} from "redux";
 
 
 let mapStateToProps = (state) => {
@@ -22,9 +23,9 @@ let mapDispatchToProps = (dispatch) => {
 
     }
 
+
 }
-let AuthRedirectComponent = widthAuthRedirect(Dialogs);
-
-const DialogsContainer = connect(mapStateToProps, mapDispatchToProps)(AuthRedirectComponent)
-
-export default DialogsContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps),
+    widthAuthRedirect
+)(Dialogs)

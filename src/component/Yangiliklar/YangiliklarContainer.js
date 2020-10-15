@@ -5,6 +5,8 @@ import {
 
 } from "../../redux/yangiliklar-reducer";
 import Yangiliklar from "./Yangiliklar";
+import {widthAuthRedirect} from "../../hoc/WidthAuthRedirect";
+import {compose} from "redux";
 
 
 
@@ -52,9 +54,50 @@ let mapStateToProps=(state)=>{
     }
 }
 
-const YangiliklarContainer=connect(mapStateToProps,{follow,Unfollow,
-    setCurrentPage,IsFollowFetchingToggle,getUserThunk})(Yangiliklarq)
-export default YangiliklarContainer
+export default compose(
+    connect(mapStateToProps,{follow,Unfollow,setCurrentPage,IsFollowFetchingToggle,getUserThunk}),
+    widthAuthRedirect
+)(Yangiliklarq)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // let mapDispatchToProps=(dispatch)=>{
 //

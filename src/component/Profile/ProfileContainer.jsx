@@ -7,6 +7,7 @@ import {connect} from "react-redux";
 import {getProfie, setUserProfile} from "../../redux/profile-reducer";
 import {Redirect, withRouter} from "react-router-dom";
 import {widthAuthRedirect} from "../../hoc/WidthAuthRedirect";
+import {compose} from "redux";
 
 
 class ProfileContainer extends React.Component{
@@ -34,13 +35,17 @@ this.props.getProfie(userId)
     }
 }
 let mapStateToProps=(state)=>{
-return ({
-    profile:state.profilePage.profile,
+    return ({
+        profile:state.profilePage.profile,
 
-})
+    })
 }
-let AuthRedirectComponent=widthAuthRedirect(ProfileContainer)
 
-let withUrlDateContainerComponent=withRouter(AuthRedirectComponent)
 
-export default connect(mapStateToProps,{setUserProfile,getProfie})(withUrlDateContainerComponent);
+
+
+export default compose(
+    connect(mapStateToProps,{setUserProfile,getProfie}),
+    withRouter,
+    widthAuthRedirect
+)(ProfileContainer)

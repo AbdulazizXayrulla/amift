@@ -1,6 +1,7 @@
 import React from "react";
 import {Redirect} from "react-router-dom";
 import {connect} from "react-redux";
+import {compose} from "redux";
 
 let mapStateToPropsForRedirect=(state)=>{
     
@@ -17,7 +18,8 @@ export const widthAuthRedirect=(Component)=>{
 
         }
     }
-    let ConnectedAuthRedirectComponent = connect(mapStateToPropsForRedirect)(RedirectComponent)
 
-    return ConnectedAuthRedirectComponent;
+    return compose(
+        connect(mapStateToPropsForRedirect)
+    )(RedirectComponent)
 }

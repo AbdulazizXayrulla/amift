@@ -2,6 +2,7 @@ import React from "react";
 import SignIn from "./SignIn";
 import {connect} from "react-redux";
 import {setMe, setUserData} from "../../redux/auth-reducer";
+import {compose} from "redux";
 
 
 class SignInContainer extends React.Component {
@@ -25,5 +26,6 @@ login:state.auth.login,
 
 })
 }
-
-export default connect(mapStateToProps,{setUserData,setMe})(SignInContainer)
+export default  compose(
+    connect(mapStateToProps,{setUserData,setMe})
+)(SignInContainer)
