@@ -1,7 +1,7 @@
 import React from "react";
 import SignIn from "./SignIn";
 import {connect} from "react-redux";
-import {setMe, setUserData} from "../../redux/auth-reducer";
+import {setMe} from "../../redux/auth-reducer";
 import {compose} from "redux";
 
 
@@ -27,5 +27,5 @@ login:state.auth.login,
 })
 }
 export default  compose(
-    connect(mapStateToProps,{setUserData,setMe})
+    connect(mapStateToProps,{setMe})
 )(SignInContainer)
