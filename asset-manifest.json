@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/amift/static/css/main.0597dafb.chunk.css",
-    "main.js": "/amift/static/js/main.d3eba8ca.chunk.js",
-    "main.js.map": "/amift/static/js/main.d3eba8ca.chunk.js.map",
+    "main.js": "/amift/static/js/main.948ac8fc.chunk.js",
+    "main.js.map": "/amift/static/js/main.948ac8fc.chunk.js.map",
     "runtime-main.js": "/amift/static/js/runtime-main.2e6d27af.js",
     "runtime-main.js.map": "/amift/static/js/runtime-main.2e6d27af.js.map",
     "static/css/2.829c9cb5.chunk.css": "/amift/static/css/2.829c9cb5.chunk.css",
     "static/js/2.88658b43.chunk.js": "/amift/static/js/2.88658b43.chunk.js",
     "static/js/2.88658b43.chunk.js.map": "/amift/static/js/2.88658b43.chunk.js.map",
     "index.html": "/amift/index.html",
-    "precache-manifest.ff07dd12a6f393d046f3d7878128d168.js": "/amift/precache-manifest.ff07dd12a6f393d046f3d7878128d168.js",
+    "precache-manifest.d793080c68bdf967afe4d97da3243b60.js": "/amift/precache-manifest.d793080c68bdf967afe4d97da3243b60.js",
     "service-worker.js": "/amift/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/amift/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.0597dafb.chunk.css.map": "/amift/static/css/main.0597dafb.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.88658b43.chunk.js",
     "static/css/main.0597dafb.chunk.css",
-    "static/js/main.d3eba8ca.chunk.js"
+    "static/js/main.948ac8fc.chunk.js"
   ]
 }
