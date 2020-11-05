@@ -4,7 +4,7 @@ import Profile from "./Profile";
 import * as axios from "axios";
 import {connect} from "react-redux";
 
-import {getProfie, setUserProfile} from "../../redux/profile-reducer";
+import {getProfie, getStatus, setUserProfile, updateStatus} from "../../redux/profile-reducer";
 import {Redirect, withRouter} from "react-router-dom";
 import {widthAuthRedirect} from "../../hoc/WidthAuthRedirect";
 import {compose} from "redux";
@@ -20,16 +20,12 @@ if(!userId){
 }
 
 this.props.getProfie(userId)
-    // axios.get(`https://social-network.samuraijs.com/api/1.0/profile/`+userId).then(response => {
-    //
-    //     this.props.setUserProfile(response.data);
-    //
-    // })
+    this.props.getStatus(userId)
 }
 
     render() {
 
-        return <Profile {...this.props} profile={this.props.profile} />
+        return <Profile {...this.props} profile={this.props.profile} status={this.props.status} updateStatus={this.props.updateStatus}/>
 
 
     }
@@ -37,6 +33,7 @@ this.props.getProfie(userId)
 let mapStateToProps=(state)=>{
     return ({
         profile:state.profilePage.profile,
+        status:state.profilePage.status
 
     })
 }
@@ -45,7 +42,7 @@ let mapStateToProps=(state)=>{
 
 
 export default compose(
-    connect(mapStateToProps,{setUserProfile,getProfie}),
+    connect(mapStateToProps,{setUserProfile,getProfie,getStatus,updateStatus}),
     withRouter,
     //widthAuthRedirect
 )(ProfileContainer)
