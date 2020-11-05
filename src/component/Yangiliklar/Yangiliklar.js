@@ -35,7 +35,7 @@ const Yangiliklar = (props) => {
                         <div><span className={s.dateTextColor}>Date:</span></div>
                         <div className="mt-4">
                             <NavLink to={'/profile/' + e.id}>
-                                <img
+                                <img 
                                     src={e.photos.small != null ? e.photos.small : 'https://www.talkwalker.com/images/2020/blog-headers/image-analysis.png'}
                                     className={s.imageSize}/>
                             </NavLink>

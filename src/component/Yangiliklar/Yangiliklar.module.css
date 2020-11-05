@@ -2,6 +2,8 @@
 
 
 }
+
+
 .postCard{
     margin-top: 23px;
     display: flex;
@@ -50,4 +52,9 @@ border: 2px solid #343F4B;
 .iconSize{
     width: 23px;
     height: 23px;
+}
+@media  (max-width: 900px) {
+    .imageSize{
+        width: 100%!important;
+    }
 }

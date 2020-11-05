@@ -8,6 +8,7 @@ import DialogsContainer from "./component/Dialogs/DialogsContainer";
 import SignUp from "./component/SignUp/SignUp";
 import ProfileContainer from "./component/Profile/ProfileContainer";
 import LoginPage from "./component/Login/Login";
+import Footer from "./component/Footer/Footer";
 
 
 
@@ -33,9 +34,9 @@ function App() {
                        render={ () => <ProfileContainer/> }/>
                 <Route path='/SignIn' render={()=><LoginPage/>}/>
                 <Route path='/SignUp' component={SignUp}/>
-
+                <Footer/>
             </div>
-            <div style={{height: '700px'}}></div>
+
 
         </div>
 
