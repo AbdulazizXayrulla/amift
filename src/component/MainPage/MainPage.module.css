@@ -1,0 +1,14 @@
+.imgSizee{
+    height: 200px;
+}
+.img1{
+    height: 80px;
+}
+@media (min-width: 0) and (max-width: 768px) {
+    .img1{
+        height: 200px;
+    }
+    .marginTopResponse{
+        margin-top: 200px;
+    }
+}

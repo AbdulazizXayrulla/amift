@@ -35,7 +35,9 @@ const Footer =()=>{
                 <p className="font-weight-bold " style={{fontSize: '20px',marginTop: '43px'}}>Follows us</p>
                 <div className="d-flex w-100 justify-content-between pr-5">
                     <a href="https://t.me/AB_XAYRULLAYEV" target="_blank"><img src={telegram} height="40" width="40"/></a>
-                    <img src={facebook} height="40" width="40"/>
+                    <a href="https://www.facebook.com/abdulaziz.xayrullayev.7/" target="_blank"><img src={facebook} height="40" width="40"/></a>
+
+
                     <a href="https://www.instagram.com/xayrullayevabdulaziz100" target="_blank"> <img src={instagram} height="40" width="40"/></a>
 
                     <a href="https://www.youtube.com/channel/UCKM83opB3lT5pPSWS5UCntg/videos?view_as=subscriber" target="_blank"> <img src={video} height="40" width="40"/></a>

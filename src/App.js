@@ -9,19 +9,19 @@ import SignUp from "./component/SignUp/SignUp";
 import ProfileContainer from "./component/Profile/ProfileContainer";
 import LoginPage from "./component/Login/Login";
 import Footer from "./component/Footer/Footer";
-
+import MainPageContainer from "./component/MainPage/MainPageContainer";
 
 
 function App() {
 
-    return <BrowserRouter >
+    return <BrowserRouter>
 
 
         <div className="mainFon container-fluid">
             <div className='container px-0'>
                 <Navbarr/>
-
-                <Route path='/yangiliklar' render={()=><YangiliklarContainer />}/>
+                <Route path='/amift' render={()=><MainPageContainer/>}/>
+                <Route path='/yangiliklar' render={() => <YangiliklarContainer/>}/>
 
 
                 {/*<Route path='/UstozlarJamoasi' render={()=><UstozlarJamoasi/>}/>*/}
@@ -29,10 +29,10 @@ function App() {
                 {/*<Route path='/OnlainDarslar' render={()=><OnlainDarslar />}/>*/}
                 {/*<Route path='/IshJoylari' render={()=><IshJoylari />}/>*/}
                 <Route path='/dialogs'
-                       render={ () => <DialogsContainer/> }/>
+                       render={() => <DialogsContainer/>}/>
                 <Route path='/profile/:userId?'
-                       render={ () => <ProfileContainer/> }/>
-                <Route path='/SignIn' render={()=><LoginPage/>}/>
+                       render={() => <ProfileContainer/>}/>
+                <Route path='/SignIn' render={() => <LoginPage/>}/>
                 <Route path='/SignUp' component={SignUp}/>
                 <Footer/>
             </div>
