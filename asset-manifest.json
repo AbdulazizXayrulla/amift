@@ -1,27 +1,32 @@
 {
   "files": {
-    "main.css": "/amift/static/css/main.a3dba39e.chunk.css",
-    "main.js": "/amift/static/js/main.0418b924.chunk.js",
-    "main.js.map": "/amift/static/js/main.0418b924.chunk.js.map",
+    "main.css": "/amift/static/css/main.5f7db4fb.chunk.css",
+    "main.js": "/amift/static/js/main.506a5f7e.chunk.js",
+    "main.js.map": "/amift/static/js/main.506a5f7e.chunk.js.map",
     "runtime-main.js": "/amift/static/js/runtime-main.2e6d27af.js",
     "runtime-main.js.map": "/amift/static/js/runtime-main.2e6d27af.js.map",
     "static/css/2.829c9cb5.chunk.css": "/amift/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.90078425.chunk.js": "/amift/static/js/2.90078425.chunk.js",
-    "static/js/2.90078425.chunk.js.map": "/amift/static/js/2.90078425.chunk.js.map",
+    "static/js/2.80c075af.chunk.js": "/amift/static/js/2.80c075af.chunk.js",
+    "static/js/2.80c075af.chunk.js.map": "/amift/static/js/2.80c075af.chunk.js.map",
     "index.html": "/amift/index.html",
-    "precache-manifest.ad45ccb6d044bd51dbbe57261af8af38.js": "/amift/precache-manifest.ad45ccb6d044bd51dbbe57261af8af38.js",
+    "precache-manifest.aae9939dc8c2258ee2c23c929e9d76d4.js": "/amift/precache-manifest.aae9939dc8c2258ee2c23c929e9d76d4.js",
     "service-worker.js": "/amift/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/amift/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.a3dba39e.chunk.css.map": "/amift/static/css/main.a3dba39e.chunk.css.map",
-    "static/js/2.90078425.chunk.js.LICENSE.txt": "/amift/static/js/2.90078425.chunk.js.LICENSE.txt",
+    "static/css/main.5f7db4fb.chunk.css.map": "/amift/static/css/main.5f7db4fb.chunk.css.map",
+    "static/js/2.80c075af.chunk.js.LICENSE.txt": "/amift/static/js/2.80c075af.chunk.js.LICENSE.txt",
     "static/media/Loading.gif": "/amift/static/media/Loading.104f6142.gif",
-    "static/media/amiftIcon.jpg": "/amift/static/media/amiftIcon.b1c68a6b.jpg"
+    "static/media/RaimaXakimovna.jpg": "/amift/static/media/RaimaXakimovna.e63121d3.jpg",
+    "static/media/Rektor.jpg": "/amift/static/media/Rektor.893c5f60.jpg",
+    "static/media/amiftIcon.jpg": "/amift/static/media/amiftIcon.b1c68a6b.jpg",
+    "static/media/ok12.jpg": "/amift/static/media/ok12.eb32e9ba.jpg",
+    "static/media/okk.png": "/amift/static/media/okk.84ae5f48.png",
+    "static/media/uzmu2.jpg": "/amift/static/media/uzmu2.253e91f2.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.2e6d27af.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.90078425.chunk.js",
-    "static/css/main.a3dba39e.chunk.css",
-    "static/js/main.0418b924.chunk.js"
+    "static/js/2.80c075af.chunk.js",
+    "static/css/main.5f7db4fb.chunk.css",
+    "static/js/main.506a5f7e.chunk.js"
   ]
 }
